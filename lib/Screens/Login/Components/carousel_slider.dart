@@ -51,13 +51,13 @@ class _CarouselState extends State<Carousel> {
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 60,
         ),
         CarouselText(currentIndex: _currentIndex),
 
 
         SizedBox(
-          height: 20,
+          height: 80,
         ),
         new DotsIndicator(
           dotsCount: _images.length,

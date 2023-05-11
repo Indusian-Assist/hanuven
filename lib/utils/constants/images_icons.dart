@@ -23,14 +23,14 @@ const AssetImage kGoogleIcon = AssetImage(kGoogleIconUrl);
 const String kDefaultImageUrl = 'assets/images/demoImage.png';
 const AssetImage kDefaultImage = AssetImage(kDefaultImageUrl);
 
-
+// This is the default image of guid 1
 const String kGuid1Url = 'assets/guidimages/guid1.png';
 const AssetImage kGuid1Image = AssetImage(kGuid1Url);
 
-
+// This is the default image of guid 2
 const String kGuid2Url = 'assets/guidimages/guid2.png';
 const AssetImage kGuid2Image = AssetImage(kGuid2Url);
 
-
+// This is the default image of guid 3
 const String kGuid3Url = 'assets/guidimages/guid3.png';
 const AssetImage kGuid3Image = AssetImage(kGuid3Url);
