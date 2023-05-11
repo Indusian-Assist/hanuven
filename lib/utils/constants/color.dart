@@ -30,6 +30,7 @@ MaterialColor kPrimarySwatch = getMaterialColor(const Color.fromARGB(255, 11, 11
 
 
 
+
 // This is the primary color of the application
 const Color kPrimaryColor = Color(0xFF0D47A1);
 const Color kPrimaryLightColor = Color(0xFFE3F2FD);
