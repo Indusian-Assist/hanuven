@@ -4,41 +4,37 @@ import 'package:flutter/material.dart';
 
 // This function is used to generate a MaterialColor from a Color
 MaterialColor getMaterialColor(Color color) {
-    final int red = color.red;
-    final int green = color.green;
-    final int blue = color.blue;
+  final int red = color.red;
+  final int green = color.green;
+  final int blue = color.blue;
 
-    final Map<int, Color> shades = {
-      50: Color.fromRGBO(red, green, blue, .1),
-      100: Color.fromRGBO(red, green, blue, .2),
-      200: Color.fromRGBO(red, green, blue, .3),
-      300: Color.fromRGBO(red, green, blue, .4),
-      400: Color.fromRGBO(red, green, blue, .5),
-      500: Color.fromRGBO(red, green, blue, .6),
-      600: Color.fromRGBO(red, green, blue, .7),
-      700: Color.fromRGBO(red, green, blue, .8),
-      800: Color.fromRGBO(red, green, blue, .9),
-      900: Color.fromRGBO(red, green, blue, 1),
-    };
+  final Map<int, Color> shades = {
+    50: Color.fromRGBO(red, green, blue, .1),
+    100: Color.fromRGBO(red, green, blue, .2),
+    200: Color.fromRGBO(red, green, blue, .3),
+    300: Color.fromRGBO(red, green, blue, .4),
+    400: Color.fromRGBO(red, green, blue, .5),
+    500: Color.fromRGBO(red, green, blue, .6),
+    600: Color.fromRGBO(red, green, blue, .7),
+    700: Color.fromRGBO(red, green, blue, .8),
+    800: Color.fromRGBO(red, green, blue, .9),
+    900: Color.fromRGBO(red, green, blue, 1),
+  };
 
-    return MaterialColor(color.value, shades);
-  }
+  return MaterialColor(color.value, shades);
+}
 
 // This is the primary swatch of the application
-MaterialColor kPrimarySwatch = getMaterialColor(const Color.fromARGB(255, 11, 116, 202));
-
-
-
+MaterialColor kPrimarySwatch =
+    getMaterialColor(const Color.fromARGB(255, 11, 116, 202));
 
 // This is the primary color of the application
 const Color kPrimaryColor = Color(0xFF0D47A1);
 const Color kPrimaryLightColor = Color(0xFFE3F2FD);
 
-
 // This is the secondary color of the application
 const Color kSecondaryColor = Color(0xFFBDBDBD);
 const Color kSecondaryLightColor = Color(0xFFE0E0E0);
-
 
 // This is the background color of the application
 const Color kBackgroundColor = Color(0xFFFAFAFA);
@@ -47,11 +43,8 @@ const Color kBackgroundColor = Color(0xFFFAFAFA);
 const Color kTextColor = Color(0xFF000000);
 const Color kTextLightColor = Color(0xFF757575);
 
-
 // This is the shadow color of the application
 const Color kShadowColor = Color(0xFFE6E6E6);
-
-
 
 // This is the info color of the application
 const Color kInfoColor = Color(0xFF2196F3);
@@ -68,7 +61,6 @@ const Color kGreyColor = Color(0xFF9E9E9E);
 // This is the dark grey color of the application
 const Color kDarkGreyColor = Color(0xFF424242);
 
-
 // This is the success, error & warning color of the application
 // success: green
 const Color kSuccessColor = Color(0xFF4CAF50);
@@ -76,8 +68,6 @@ const Color kSuccessColor = Color(0xFF4CAF50);
 const Color kErrorColor = Color(0xFFB00020);
 // warning: yellow
 const Color kWarningColor = Color(0xFFFFC107);
-
-
 
 // ------------------G R A D I E N T S------------------
 // This is the primary gradient color of the application
@@ -88,6 +78,16 @@ const LinearGradient kPrimaryGradientColor = LinearGradient(
     Color(0xFF0D47A1),
     Color(0xFF1976D2),
     Color(0xFF42A5F5),
+  ],
+);
+LinearGradient kSplashGradientColor = LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+    const Color(0xFF42A5F5).withOpacity(0.2),
+    const Color(0xFF42A5F5).withOpacity(0.2),
+    const Color(0xFF42A5F5).withOpacity(0.1),
+    Colors.white.withOpacity(0.1),
   ],
 );
 
