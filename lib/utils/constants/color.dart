@@ -168,3 +168,14 @@ const LinearGradient kWarningGradientColor = LinearGradient(
     Color(0xFFFFE082),
   ],
 );
+
+
+LinearGradient kBottomGradientColor = LinearGradient(
+  begin: Alignment.bottomCenter,
+  end: Alignment.topCenter,
+  colors: [
+    Color(0xFF0097DA),
+    Color(0xFF0097DA).withOpacity(0.4),
+    Color(0xFFffffff).withOpacity(0.1),
+  ],
+);
