@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:hanuven/utils/constants/text_styles.dart';
 
 
+// ignore: must_be_immutable
 class CarouselText extends StatelessWidget {
   int currentIndex;
   CarouselText({Key? key, required this.currentIndex}) : super(key: key);
 
 
-  List<String> _messages = [    "Lorem ipsum dolor sit\namet",    "Lorem ipsum dolor sit\namet",    "Lorem ipsum dolor sit\namet",  ];
+  List<String> _messages = [    "Lorem ipsum dolor sitamet",    "Lorem ipsum dolor sitamet",    "Lorem ipsum dolor sitamet",  ];
   List<String> _messages2 = ["consectetur", "consectetur", "consectetur"];
 
   @override

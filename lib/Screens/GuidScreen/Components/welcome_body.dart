@@ -1,7 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:hanuven/Screens/Login/Components/carousel_slider.dart';
-import 'package:hanuven/Screens/Login/Components/guid_button.dart';
+import 'package:hanuven/Screens/GuidScreen/Components/carousel_slider.dart';
+import 'package:hanuven/Screens/GuidScreen/Components/guid_button.dart';
 import 'package:hanuven/utils/constants/color.dart';
 
 class WelcomeBody extends StatefulWidget {
@@ -14,12 +13,8 @@ class WelcomeBody extends StatefulWidget {
 class _BodyState extends State<WelcomeBody> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-
-        children: [
-      Expanded(
-          flex: 1,
-          child: Carousel()),
+    return Column(children: [
+      Expanded(flex: 1, child: Carousel()),
       Stack(
         children: <Widget>[
           Positioned(
@@ -30,20 +25,19 @@ class _BodyState extends State<WelcomeBody> {
             child: Container(
               width: double.infinity,
               height: 200,
-              decoration: BoxDecoration(
-                gradient: kBottomGradientColor
-                // LinearGradient(
-                //   begin: Alignment.bottomCenter,
-                //   end: Alignment.topCenter,
-                //   colors: [Colors.lightBlue, Colors.white],
-                ),
-              ),
+              decoration: BoxDecoration(gradient: kBottomGradientColor
+                  // LinearGradient(
+                  //   begin: Alignment.bottomCenter,
+                  //   end: Alignment.topCenter,
+                  //   colors: [Colors.lightBlue, Colors.white],
+                  ),
             ),
-
+          ),
           Positioned.fill(
             child: Align(
               alignment: Alignment.center,
-              child: GuidButton(),
+              child: GuidButton(
+                  onPressed: () => Navigator.pushNamed(context, '/login')),
             ),
           )
         ],
