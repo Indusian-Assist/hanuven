@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hanuven/Screens/Login/welcome_screen.dart';
 import '../utils/Components/custom_page_route.dart';
 import '../Screens/Home/home_screen.dart';
 import '../Screens/Splash/splash_screen.dart';
@@ -19,7 +20,7 @@ onGenerateRoute(RouteSettings settings) {
           builder: (context) => const SplashScreen(), settings: settings);
     case '/home':
       return CustomPageRoute(
-          child: const HomeScreen(),
+          child: const WelcomeScreen(),
           settings: settings,
           direction: AxisDirection.left);
   }
