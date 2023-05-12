@@ -1,8 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:hanuven/Screens/Home/components/body.dart';
-import 'package:hanuven/Screens/Login/Components/welcome_body.dart';
+import 'package:hanuven/Screens/GuidScreen/Components/welcome_body.dart';
 import 'package:hanuven/utils/constants/color.dart';
 
 class WelcomeScreen extends StatefulWidget {
