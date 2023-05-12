@@ -25,7 +25,7 @@ class Body extends StatelessWidget {
           child: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              //TODO s
+              Navigator.pop(context);
             },
           ),
         ),
@@ -36,12 +36,18 @@ class Body extends StatelessWidget {
                 kMainIconUrl,
               ),
               onPressed: () {
-                //TODO
+
               },
             ),
           ),
         ],
       ),
+      body: ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/ScanQR');
+        },
+        child: Center(child: const Text('Scan QR')),
+      )
     );
   }
 }
