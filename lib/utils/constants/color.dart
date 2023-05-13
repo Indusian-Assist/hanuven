@@ -28,6 +28,7 @@ MaterialColor getMaterialColor(Color color) {
 MaterialColor kPrimarySwatch =
     getMaterialColor(const Color.fromARGB(255, 11, 116, 202));
 
+
 // This is the primary color of the application
 const Color kPrimaryColor = Color(0xFF0D47A1);
 const Color kPrimaryLightColor = Color(0xFFE3F2FD);
@@ -165,5 +166,16 @@ const LinearGradient kWarningGradientColor = LinearGradient(
     Color(0xFFFFC107),
     Color(0xFFFFD54F),
     Color(0xFFFFE082),
+  ],
+);
+
+
+LinearGradient kBottomGradientColor = LinearGradient(
+  begin: Alignment.bottomCenter,
+  end: Alignment.topCenter,
+  colors: [
+    Color(0xFF0097DA),
+    Color(0xFF0097DA).withOpacity(0.4),
+    Color(0xFFffffff).withOpacity(0.1),
   ],
 );
