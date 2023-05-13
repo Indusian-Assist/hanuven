@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 // ---A S S E T  I C O N S---
 // This is the main icon of the application
-const String kMainIconUrl = 'assets/icons/dequanilogo.jpg';
+const String kMainIconUrl = 'assets/icons/dequanilogo.png';
 const AssetImage kMainIcon = AssetImage(kMainIconUrl);
 
 
