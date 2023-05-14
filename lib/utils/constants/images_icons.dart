@@ -34,3 +34,10 @@ const AssetImage kGuid2Image = AssetImage(kGuid2Url);
 // This is the default image of guid 3
 const String kGuid3Url = 'assets/images/guid3.png';
 const AssetImage kGuid3Image = AssetImage(kGuid3Url);
+
+// This is the default image of products
+const String kProduct1Url = 'assets/images/product1.jpg';
+const AssetImage kProduct1Image = AssetImage(kProduct1Url);
+
+const String kProduct2Url = 'assets/images/product2.jpg';
+const AssetImage kProduct2Image = AssetImage(kProduct2Url);

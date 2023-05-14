@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanuven/utils/constants/color.dart';
+import 'package:hanuven/utils/constants/sizes.dart';
 
 import '../../../utils/constants/images_icons.dart';
+import 'components.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -13,81 +16,118 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      appBar: AppBar(
-        backgroundColor: kBackgroundColor,
-        elevation: 0,
-        leading: Container(
-          margin: const EdgeInsets.all(4),
-          padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              //TODO
-            },
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(75.0),
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: AppBar(
+            backgroundColor: kBackgroundColor,
+            elevation: 0,
+            leading: Container(
+              margin: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  //TODO
+                },
+              ),
+            ),
+            actions: [
+              Container(
+                child: InkWell(
+                  onTap: () {
+                    //todo
+                  },
+                  child: Ink.image(
+                    image: AssetImage(
+                      kMainIconUrl,
+                    ),
+                    height: 75,
+                    width: 75,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-        actions: [
-          Container(
-            height: 100,
-            child: IconButton(
-              icon: Image.asset(
-                kMainIconUrl,
-              ),
-              onPressed: () {
-                //TODO
-              },
-            ),
-          ),
-        ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            width: double.infinity,
-            height: 100,
-          ),
-          //scan button
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 75),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(50),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                ),
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(16.0),
-                    textStyle: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.w600),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: 100,
+              ),
+              //scanner button
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 75, vertical: 10),
+                child: Container(
+                  height: 70,
+                  width: 280,
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1),
+                    borderRadius: BorderRadius.circular(50),
+                    color: Colors.black,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurStyle: BlurStyle.outer,
+                        blurRadius: 15,
+                        color: Colors.grey,
+                      )
+                    ],
                   ),
-                  onPressed: () {},
-                  child: const Text('Scan Products'),
+                  child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: kLightColor,
+                      ),
+                      onPressed: () {},
+                      icon: Icon(Icons.qr_code_scanner),
+                      label: Text(
+                        'SCAN PRODUCTS',
+                        style: GoogleFonts.urbanist(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      )),
                 ),
               ),
-            ),
-          ),
-          SizedBox(
-            height: 200,
-            width: double.infinity,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
-            child: Text(
-              'Our Products',
-              style: GoogleFonts.poppins(
-                fontSize: 50,
-                fontWeight: FontWeight.w500,
+              SizedBox(
+                height: 150,
+                width: double.infinity,
               ),
-            ),
+              // Header Text
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                child: Text(
+                  'Our Products',
+                  style: GoogleFonts.urbanist(
+                    color: kTextColor,
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              // Products
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Components.customProductCard(kProduct1Url, 'Product 1',
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'),
+                    Components.customProductCard(kProduct2Url, 'Product 2',
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'),
+                  ],
+                ),
+              )
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
