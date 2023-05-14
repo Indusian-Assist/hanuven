@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanuven/utils/constants/color.dart';
-
+import 'package:lottie/lottie.dart';
 import '../../../utils/constants/images_icons.dart';
 import 'components.dart';
 
@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(10),
           child: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent,
             elevation: 0,
             leading: Container(
               margin: const EdgeInsets.all(3),
@@ -58,15 +58,20 @@ class Body extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
-                width: double.infinity,
-                height: 100,
+              Container(
+                height: 125,
+                child: Lottie.asset(
+                  'lib/Screens/Home/animations/scanqr1.json',
+                  fit: BoxFit.cover,
+                  reverse: true,
+                  repeat: true,
+                ),
               ),
               //scanner button
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 75, vertical: 10),
                 child: Container(
-                  height: 70,
+                  height: 60,
                   width: 280,
                   padding: EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
@@ -76,7 +81,7 @@ class Body extends StatelessWidget {
                     boxShadow: const [
                       BoxShadow(
                         blurStyle: BlurStyle.outer,
-                        blurRadius: 15,
+                        blurRadius: 10,
                         color: Colors.grey,
                       )
                     ],
@@ -113,7 +118,7 @@ class Body extends StatelessWidget {
                   'Our Products',
                   style: GoogleFonts.urbanist(
                     color: kTextColor,
-                    fontSize: 50,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
