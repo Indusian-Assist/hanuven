@@ -12,6 +12,18 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text('Login Screen'),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/home'),
+              child: Text('Go to Home Screen'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

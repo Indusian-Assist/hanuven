@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hanuven/Screens/GuidScreen/welcome_screen.dart';
+import 'package:hanuven/Screens/Home/home_screen.dart';
+import 'package:hanuven/Screens/Scanner/scanner_screen.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
 import '../utils/Components/custom_page_route.dart';
 import '../Screens/Splash/splash_screen.dart';
@@ -20,7 +22,7 @@ onGenerateRoute(RouteSettings settings) {
           builder: (context) => const SplashScreen(), settings: settings);
     case '/home':
       return CustomPageRoute(
-          child: const WelcomeScreen(),
+          child: const HomeScreen(),
           settings: settings,
           direction: AxisDirection.left);
     case '/guid':
@@ -31,6 +33,11 @@ onGenerateRoute(RouteSettings settings) {
     case '/login':
       return CustomPageRoute(
           child: const LoginScreen(),
+          settings: settings,
+          direction: AxisDirection.left);
+    case '/ScanQR':
+      return CustomPageRoute(
+          child: const ScannerScreen(),
           settings: settings,
           direction: AxisDirection.left);
   }

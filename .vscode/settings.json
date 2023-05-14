@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/Users/srijansamridh/Documents/flutter/hanuven/linux"
+    "cmake.sourceDirectory": "/Users/srijansamridh/Documents/flutter/hanuven/linux",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
