@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class ResultScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: (){
+          onPressed: () {
             closeScreen();
             Navigator.pop(context);
           },
@@ -50,7 +51,6 @@ class ResultScreen extends StatelessWidget {
                 version: QrVersions.auto,
                 size: 200.0,
               ),
-
               Text(
                 'Scanned Result',
                 style: TextStyle(
@@ -81,7 +81,7 @@ class ResultScreen extends StatelessWidget {
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: kSuccessColor,
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -92,6 +92,21 @@ class ResultScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     Clipboard.setData(ClipboardData(text: code));
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Copied to clipboard'),
+                        content: const Text('it`s copied to clipboard'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context, 'OK');
+                            },
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                   child: Text(
                     'Copy to clipboard',
