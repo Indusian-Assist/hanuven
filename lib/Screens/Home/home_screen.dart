@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'components/body.dart';
+import 'components/components.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,7 +13,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(title: const Text('Hanuven')),
+      backgroundColor: Colors.white,
+        appBar: Components.customPreferredSize(),
         body: Body());
   }
+
+  
 }
