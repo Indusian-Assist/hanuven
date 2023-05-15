@@ -61,7 +61,7 @@ class Body extends StatelessWidget {
               Container(
                 height: 125,
                 child: Lottie.asset(
-                  'lib/Screens/Home/animations/scanqr1.json',
+                  'lib/utils/Components/animations/scanqr1.json',
                   fit: BoxFit.cover,
                   reverse: true,
                   repeat: true,
