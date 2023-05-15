@@ -3,6 +3,8 @@ import 'package:hanuven/Screens/GuidScreen/welcome_screen.dart';
 import 'package:hanuven/Screens/Home/home_screen.dart';
 import 'package:hanuven/Screens/Scanner/scanner_screen.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
+import '../Screens/Scanner/components/qr_scan.dart';
+import '../Screens/Scanner/components/scan_result.dart';
 import '../utils/Components/custom_page_route.dart';
 import '../Screens/Splash/splash_screen.dart';
 
@@ -37,8 +39,13 @@ onGenerateRoute(RouteSettings settings) {
           direction: AxisDirection.left);
     case '/ScanQR':
       return CustomPageRoute(
-          child: const ScannerScreen(),
+          child: const QRScanner(),
           settings: settings,
           direction: AxisDirection.left);
+    case '/scanResult':
+      return CustomPageRoute(
+          child: ResultScreen(closeScreen: () {  }, code: ''),
+          settings: settings,
+          direction: AxisDirection.up);
   }
 }
