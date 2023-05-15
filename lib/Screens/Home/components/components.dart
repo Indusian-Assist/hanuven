@@ -22,7 +22,7 @@ class Components {
             ),
           ]),
       child: AspectRatio(
-        aspectRatio: 3/2,
+        aspectRatio: 3 / 2,
         child: Padding(
           padding: EdgeInsets.all(5),
           child: Column(
@@ -36,7 +36,10 @@ class Components {
                   width: 180,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(25),
-                    child: Image(image: AssetImage(imageUrl), fit: BoxFit.cover,),
+                    child: Image(
+                      image: AssetImage(imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -78,21 +81,6 @@ class Components {
                   children: [
                     Container(
                       height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        color: kBackgroundColor,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: IconButton(
-                        iconSize: 15,
-                        icon: const Icon(Icons.north_east),
-                        onPressed: () {
-                          //Todo : Srijan add an action
-                        },
-                      ),
-                    ),
-                    Container(
-                      height: 30,
                       //margin: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
                         color: kBackgroundColor,
@@ -110,12 +98,35 @@ class Components {
                       ),
                     ),
                     Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        color: kBackgroundColor,
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: IconButton(
+                        iconSize: 15,
+                        icon: const Icon(Icons.send),
+                        onPressed: () {
+                          //Todo : Srijan add an action
+                        },
+                      ),
+                    ),
+                    Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Price',style: GoogleFonts.urbanist(color:Colors.grey, fontSize: 12),),
-                          Text('INR 300', style: GoogleFonts.urbanist(color: kLightColor, fontSize: 12),),
+                          Text(
+                            'Price',
+                            style: GoogleFonts.urbanist(
+                                color: Colors.grey, fontSize: 12),
+                          ),
+                          Text(
+                            'INR 300',
+                            style: GoogleFonts.urbanist(
+                                color: kLightColor, fontSize: 12),
+                          ),
                         ],
                       ),
                     ),
