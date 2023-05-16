@@ -95,18 +95,14 @@ class Body extends StatelessWidget {
                     transitionType: _containerTransitionType,
                     transitionDuration: Duration(milliseconds: 700),
                     closedBuilder: (context, _) => Components.customProductCard(
-                        kProduct1Url,
-                        'Product 1',
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'),
+                        kProduct1Url, 'Product 1', 'INR 300'),
                     openBuilder: (context, _) => ProductScreen(),
                   ),
                   OpenContainer(
                     transitionType: _containerTransitionType,
                     transitionDuration: Duration(milliseconds: 700),
                     closedBuilder: (context, _) => Components.customProductCard(
-                        kProduct2Url,
-                        'Product 2',
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'),
+                        kProduct2Url, 'Product 2', 'INR 500'),
                     openBuilder: (context, _) => ProductScreen(),
                   ),
                 ],
