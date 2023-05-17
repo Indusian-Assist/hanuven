@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-
-import '../Home/components/components.dart';
 import 'components/body.dart';
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({super.key});
+class ProductScreen extends StatelessWidget {
+  final String pimage;
+  final String title;
+  final String desc;
+  final String price;
+  const ProductScreen(
+      {super.key,
+      required this.price,
+      required this.pimage,
+      required this.title,
+      required this.desc});
 
-  @override
-  State<ProductScreen> createState() => _ProductScreenState();
-}
-
-class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //appBar: Components.customPreferredSize(),
-      body: Body(),
+      body: Body(pimage: pimage, title: title, desc: desc, price: price),
     );
   }
 }

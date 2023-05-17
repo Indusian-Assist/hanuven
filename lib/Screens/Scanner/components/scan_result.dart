@@ -23,11 +23,12 @@ class ResultScreen extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             closeScreen();
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            Navigator.pushReplacementNamed(context, '/home');
           },
           icon: Icon(
             Icons.arrow_back_ios_new_rounded,
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         title: Text(
@@ -92,21 +93,8 @@ class ResultScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     Clipboard.setData(ClipboardData(text: code));
-                    showDialog<String>(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                        title: const Text('Copied to clipboard'),
-                        content: const Text('it`s copied to clipboard'),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context, 'OK');
-                            },
-                            child: const Text('OK'),
-                          ),
-                        ],
-                      ),
-                    );
+                    Navigator.pushReplacementNamed(context, '/success');
+                    // buildCustomDialog(context);
                   },
                   child: Text(
                     'Copy to clipboard',
@@ -116,6 +104,22 @@ class ResultScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Future<String?> buildCustomDialog(BuildContext context) {
+    return showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Text('Copied to clipboard'),
+        content: const Text('it`s copied to clipboard'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {},
+            child: const Text('OK'),
+          ),
+        ],
       ),
     );
   }

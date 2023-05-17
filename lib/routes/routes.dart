@@ -4,6 +4,7 @@ import 'package:hanuven/Screens/Home/home_screen.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
 import '../Screens/Scanner/components/qr_scan.dart';
 import '../Screens/Scanner/components/scan_result.dart';
+import '../utils/Components/animations/success.dart';
 import '../utils/Components/custom_page_route.dart';
 import '../Screens/Splash/splash_screen.dart';
 
@@ -46,5 +47,10 @@ onGenerateRoute(RouteSettings settings) {
           child: ResultScreen(closeScreen: () {  }, code: ''),
           settings: settings,
           direction: AxisDirection.up);
+    case '/success':
+      return CustomPageRoute(
+        child: SuccessScreen(),
+        settings: settings,
+        direction: AxisDirection.up);
   }
 }

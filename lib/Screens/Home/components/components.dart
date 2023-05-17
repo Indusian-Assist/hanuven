@@ -54,9 +54,9 @@ class Components {
   static Container customProductCard(
       String imageUrl, String headertxt, String price) {
     return Container(
-      height: 300,
-      width: 200,
-      margin: const EdgeInsets.all(3.0),
+      height: 280,
+      width: 180,
+      //margin: const EdgeInsets.all(3.0),
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           border: Border.all(width: 0),
@@ -64,7 +64,7 @@ class Components {
           color: Colors.black,
           boxShadow: const [
             BoxShadow(
-              blurRadius: 25,
+              blurRadius: 15,
               spreadRadius: 10,
               color: Color.fromARGB(31, 178, 173, 173),
             ),
@@ -78,8 +78,8 @@ class Components {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 5.0),
               child: Container(
-                height: 180,
-                width: 180,
+                height: 160,
+                width: 160,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image(

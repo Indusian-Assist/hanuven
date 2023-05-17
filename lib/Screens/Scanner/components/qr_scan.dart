@@ -144,7 +144,7 @@ class _QRScannerState extends State<QRScanner> with TickerProviderStateMixin {
                           debugPrint('Barcode found! ${barcode.rawValue}');
                         }
                         _isScanComplete = true;
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           CustomPageRoute(
                               child: ResultScreen(
