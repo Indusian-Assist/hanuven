@@ -35,6 +35,13 @@ const AssetImage kGuid2Image = AssetImage(kGuid2Url);
 const String kGuid3Url = 'assets/images/guid3.png';
 const AssetImage kGuid3Image = AssetImage(kGuid3Url);
 
+// This is image for login screen
+const String loginUrl = 'assets/images/login1.png';
+const AssetImage loginImage = AssetImage(loginUrl);
+
+//This is image for otp screen
+const String otpUrl = 'assets/images/otpscreen.png';
+const AssetImage otpImage = AssetImage(otpUrl);
 
 // This is the default image of products
 const String kProduct1Url = 'assets/images/product1.jpg';

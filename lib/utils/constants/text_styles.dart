@@ -155,3 +155,10 @@ TextStyle kDefaultBoldItalicUnderlineLineThroughTextStyle = TextStyle(
     TextDecoration.lineThrough,
   ]),
 );
+
+// This is the default text style for login page of application
+TextStyle kDefaultFontLogin = TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'urbanist'
+);
