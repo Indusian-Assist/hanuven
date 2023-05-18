@@ -148,7 +148,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     GestureDetector(
                       onTap: () {
                         formKey.currentState?.save();
-                        Navigator.pushReplacementNamed(context, '/home');
+                        Navigator.pushReplacementNamed(context, '/otp');
                       },
                       child: Container(
                         decoration: BoxDecoration(

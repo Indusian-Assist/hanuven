@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hanuven/Screens/GuidScreen/welcome_screen.dart';
 import 'package:hanuven/Screens/Home/home_screen.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
+import 'package:hanuven/Screens/loginScreen/otp_screen.dart';
 import '../Screens/Scanner/components/qr_scan.dart';
 import '../Screens/Scanner/components/scan_result.dart';
 import '../utils/Components/animations/success.dart';
@@ -35,6 +36,11 @@ onGenerateRoute(RouteSettings settings) {
     case '/login':
       return CustomPageRoute(
           child: const LoginScreen(),
+          settings: settings,
+          direction: AxisDirection.left);
+    case '/otp':
+      return CustomPageRoute(
+          child: const OTPScreen(),
           settings: settings,
           direction: AxisDirection.left);
     case '/ScanQR':
