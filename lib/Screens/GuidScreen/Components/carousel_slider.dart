@@ -38,7 +38,7 @@ class _CarouselState extends State<Carousel> {
             initialPage: 0,
             enlargeCenterPage: true,
             autoPlay: true,
-            autoPlayInterval: Duration(seconds: 1),
+            autoPlayInterval: Duration(seconds: 2),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.easeInOut,
             onPageChanged: (index, reason) {

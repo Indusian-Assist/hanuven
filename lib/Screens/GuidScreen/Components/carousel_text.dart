@@ -12,9 +12,9 @@ class CarouselText extends StatelessWidget {
     "Scan the product\n to see whether it is genuine..",
   ];
   List<String> _messages2 = [
-    "Developed by IndusianAssist",
-    "Developed by IndusianAssist",
-    "Developed by IndusianAssist"
+    "Designed & Developed by\n IndusianAssist Pvt. Ltd.",
+    "Designed & Developed by\n IndusianAssist Pvt. Ltd.",
+    "Designed & Developed by\n IndusianAssist Pvt. Ltd."
   ];
 
   @override
@@ -32,6 +32,7 @@ class CarouselText extends StatelessWidget {
               ),
               SizedBox(height: 25),
               Text(
+                textAlign: TextAlign.center, 
                 _messages2[currentIndex],
                 style: k10DefaultTextStyle,
               ),
