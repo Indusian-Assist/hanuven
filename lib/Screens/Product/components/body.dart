@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hanuven/utils/constants/images_icons.dart';
-
 import '../../../utils/constants/color.dart';
 
 class Body extends StatelessWidget {
+  final String pimage;
+  final String title;
+  final String desc;
+  final String price;
   const Body({
+    required this.pimage,
+    required this.title,
+    required this.desc,
+    required this.price,
     super.key,
   });
 
@@ -20,7 +26,7 @@ class Body extends StatelessWidget {
           Container(
             height: size.height * 0.5,
             child: Image.asset(
-              kProduct1Url,
+              pimage,
               fit: BoxFit.fill,
             ),
           ),
@@ -34,7 +40,7 @@ class Body extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Product 1',
+                        title,
                         style: GoogleFonts.urbanist(
                             fontSize: 25, fontWeight: FontWeight.w600),
                       ),
@@ -67,7 +73,7 @@ class Body extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 5),
                   child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                    desc,
                     style: const TextStyle(
                       overflow: TextOverflow.visible,
                       fontSize: 10,
@@ -85,7 +91,7 @@ class Body extends StatelessWidget {
                         style: GoogleFonts.urbanist(fontSize: 15),
                       ),
                       Text(
-                        'INR 300',
+                        price,
                         style: GoogleFonts.urbanist(
                           fontStyle: FontStyle.italic,
                           fontSize: 15,

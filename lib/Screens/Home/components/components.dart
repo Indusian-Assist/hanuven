@@ -7,68 +7,68 @@ import '../../../utils/constants/images_icons.dart';
 class Components {
   static AppBar customAppBar() {
     return AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Container(
-          margin: const EdgeInsets.all(3),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              //todo: Srijan add a perform action
-            },
-          ),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      leading: Container(
+        margin: const EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(25),
         ),
-        actions: [
-          Container(
-            child: InkWell(
-              onTap: () {
-                // Todo: Srijan add a perform action
-              },
-              child: Ink.image(
-                image: AssetImage(
-                  kMainIconUrl,
-                ),
-                height: 75,
-                width: 75,
+        child: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            //todo: Srijan add a perform action
+          },
+        ),
+      ),
+      actions: [
+        Container(
+          child: InkWell(
+            onTap: () {
+              // Todo: Srijan add a perform action
+            },
+            child: Ink.image(
+              image: AssetImage(
+                kMainIconUrl,
               ),
+              height: 75,
+              width: 75,
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
   }
 
   static PreferredSize customPreferredSize() {
     return PreferredSize(
-        preferredSize: Size.fromHeight(75.0),
-        child: Padding(
-          padding: EdgeInsets.all(10),
-          child: Components.customAppBar(),
-        ),
-      );
+      preferredSize: Size.fromHeight(75.0),
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: Components.customAppBar(),
+      ),
+    );
   }
+
   static Container customProductCard(
-      String imageUrl, String headertxt, String desctxt) {
+      String imageUrl, String headertxt, String price) {
     return Container(
-      height: 320,
-      width: 200,
-      margin: const EdgeInsets.all(4.0),
-      padding: const EdgeInsets.all(3.0),
+      height: 280,
+      width: 180,
+      //margin: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           border: Border.all(width: 0),
           borderRadius: BorderRadius.circular(25),
           color: Colors.black,
           boxShadow: const [
             BoxShadow(
-              blurRadius: 25,
-              spreadRadius:10,
+              blurRadius: 15,
+              spreadRadius: 10,
               color: Color.fromARGB(31, 178, 173, 173),
             ),
-          ]
-      ),
+          ]),
       child: Padding(
         padding: EdgeInsets.all(5),
         child: Column(
@@ -79,7 +79,7 @@ class Components {
               padding: EdgeInsets.symmetric(vertical: 5.0),
               child: Container(
                 height: 160,
-                width: 180,
+                width: 160,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image(
@@ -100,84 +100,62 @@ class Components {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Color.fromRGBO(255, 255, 255, 0.18),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Text(
-                    desctxt,
-                    style: const TextStyle(
-                      overflow: TextOverflow.visible,
-                      fontSize: 10,
-                      color: kLightColor,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
+            Container(
               padding: EdgeInsets.symmetric(vertical: 5.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 30,
-                    //margin: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                      color: kBackgroundColor,
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: TextButton(
-                      child: Text('BUY NOW'),
-                      style: TextButton.styleFrom(
-                          foregroundColor: kTextColor,
-                          textStyle: GoogleFonts.urbanist(
-                              fontWeight: FontWeight.bold, fontSize: 10)),
-                      onPressed: () {
-                        //Todo: Srijan add an action
-                      },
-                    ),
+                  Text(
+                    'Price',
+                    style:
+                        GoogleFonts.urbanist(color: kLightColor, fontSize: 14),
                   ),
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: kBackgroundColor,
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: IconButton(
-                      iconSize: 15,
-                      icon: const Icon(Icons.send),
-                      onPressed: () {
-                        //Todo : Srijan add an action
-                      },
-                    ),
-                  ),
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Price',
-                          style: GoogleFonts.urbanist(
-                              color: Colors.grey, fontSize: 12),
-                        ),
-                        Text(
-                          'INR 300',
-                          style: GoogleFonts.urbanist(
-                              color: kLightColor, fontSize: 12),
-                        ),
-                      ],
-                    ),
+                  Text(
+                    price,
+                    style:
+                        GoogleFonts.urbanist(color: kLightColor, fontSize: 14),
                   ),
                 ],
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 30,
+                  //margin: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: kBackgroundColor,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: TextButton(
+                    child: Text('BUY NOW'),
+                    style: TextButton.styleFrom(
+                        foregroundColor: kTextColor,
+                        textStyle: GoogleFonts.urbanist(
+                            fontWeight: FontWeight.bold, fontSize: 10)),
+                    onPressed: () {
+                      //Todo: Srijan add an action
+                    },
+                  ),
+                ),
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: kBackgroundColor,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: IconButton(
+                    iconSize: 15,
+                    icon: const Icon(Icons.send),
+                    onPressed: () {
+                      //Todo : Srijan add an action
+                    },
+                  ),
+                ),
+              ],
             ),
           ],
         ),
