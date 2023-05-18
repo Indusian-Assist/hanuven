@@ -13,7 +13,9 @@ class WelcomeBody extends StatefulWidget {
 class _BodyState extends State<WelcomeBody> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
       Expanded(flex: 1, child: Carousel()),
       Stack(
         children: <Widget>[

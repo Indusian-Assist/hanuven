@@ -13,16 +13,14 @@ class Carousel extends StatefulWidget {
 }
 
 class _CarouselState extends State<Carousel> {
-
   int _currentIndex = 0;
-  List<String> _images = [    kGuid1Url,    kGuid2Url,    kGuid3Url,  ];
+  List<String> _images = [kGuid1Url, kGuid2Url, kGuid3Url];
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-
         CarouselSlider(
           items: _images.map((image) {
             return Container(
@@ -40,7 +38,7 @@ class _CarouselState extends State<Carousel> {
             initialPage: 0,
             enlargeCenterPage: true,
             autoPlay: true,
-            autoPlayInterval: Duration(seconds: 3),
+            autoPlayInterval: Duration(seconds: 1),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.easeInOut,
             onPageChanged: (index, reason) {
@@ -54,8 +52,6 @@ class _CarouselState extends State<Carousel> {
           height: 60,
         ),
         CarouselText(currentIndex: _currentIndex),
-
-
         SizedBox(
           height: 80,
         ),
@@ -67,7 +63,6 @@ class _CarouselState extends State<Carousel> {
             activeColor: kTextColor,
           ),
         )
-
       ],
     );
   }
