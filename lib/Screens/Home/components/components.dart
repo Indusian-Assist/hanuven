@@ -16,7 +16,7 @@ class Components {
           borderRadius: BorderRadius.circular(25),
         ),
         child: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back_ios_new),
           onPressed: () {
             //todo: Srijan add a perform action
           },
