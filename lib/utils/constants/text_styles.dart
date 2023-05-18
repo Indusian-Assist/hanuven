@@ -3,9 +3,17 @@ import 'package:flutter/material.dart';
 import 'color.dart';
 
 //--------------------S T Y L E S--------------------
-
+// ------------------S I Z E 10------------------
 // This is the default text style of the application
-const TextStyle kDefaultTextStyle = TextStyle(
+const TextStyle k10DefaultTextStyle = TextStyle(
+  fontSize: 10,
+  fontWeight: FontWeight.normal,
+  fontStyle: FontStyle.normal,
+  color: kTextColor,
+);
+// ------------------S I Z E 14------------------
+// This is the default text style of the application
+const TextStyle k14DefaultTextStyle = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.normal,
   fontStyle: FontStyle.normal,
@@ -155,3 +163,11 @@ TextStyle kDefaultBoldItalicUnderlineLineThroughTextStyle = TextStyle(
     TextDecoration.lineThrough,
   ]),
 );
+
+
+// ------------------S I Z E 16------------------
+// This is the default text style of the application
+const TextStyle k16DefaultTextStyle = TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                );
