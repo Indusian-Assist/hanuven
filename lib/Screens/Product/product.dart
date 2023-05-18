@@ -18,6 +18,7 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       //appBar: Components.customPreferredSize(),
       body: Body(pimage: pimage, title: title, desc: desc, price: price),
+      
     );
   }
 }
