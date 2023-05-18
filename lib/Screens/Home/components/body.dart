@@ -101,7 +101,7 @@ class Body extends StatelessWidget {
                       ),
                     ),
                     transitionType: _containerTransitionType,
-                    transitionDuration: Duration(milliseconds: 700),
+                    transitionDuration: Duration(milliseconds: 500),
                     closedBuilder: (context, _) => Components.customProductCard(
                         kProduct1Url, 'Product 1', 'INR 300'),
                     openBuilder: (context, _) => ProductScreen(
@@ -122,7 +122,7 @@ class Body extends StatelessWidget {
                       ),
                     ),
                     transitionType: _containerTransitionType,
-                    transitionDuration: Duration(milliseconds: 700),
+                    transitionDuration: Duration(milliseconds: 500),
                     closedBuilder: (context, _) => Components.customProductCard(
                         kProduct2Url, 'Product 2', 'INR 500'),
                     openBuilder: (context, _) => ProductScreen(
