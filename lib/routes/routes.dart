@@ -32,7 +32,7 @@ onGenerateRoute(RouteSettings settings) {
       return CustomPageRoute(
           child: const WelcomeScreen(),
           settings: settings,
-          direction: AxisDirection.left);
+          direction: AxisDirection.right);
     case '/login':
       return CustomPageRoute(
           child: const LoginScreen(),

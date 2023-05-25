@@ -1,6 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hanuven/utils/constants/color.dart';
+import 'package:hanuven/utils/Auth/authentication_repository.dart';
 import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:otp_timer_button/otp_timer_button.dart';
 
@@ -13,12 +14,14 @@ class OTPScreen extends StatefulWidget {
 
 class _OTPScreenState extends State<OTPScreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String code = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+        padding: EdgeInsets.symmetric(vertical: 50, horizontal: 10),
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,88 +44,55 @@ class _OTPScreenState extends State<OTPScreen> {
                   Form(
                       child: Center(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        SizedBox(
-                          
-                          height: 68,
-                          width: 64,
-                          child: TextField(
-
-                            onChanged: (value) {
-                              if (value.length == 1) {
-                                FocusScope.of(context).nextFocus();
-                              }
-                            },
-
-                            decoration: const InputDecoration(
-  
-                                hintText: "0",
-                                border: OutlineInputBorder()),
-                            //style: Theme.of(context).textTheme.headline6,
-                            keyboardType: TextInputType.number,
-                            textAlign: TextAlign.center,
-                            inputFormatters: [
-                              LengthLimitingTextInputFormatter(1),
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                          ),
+                        CustomOTPField(
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              code = code + value;
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
                         ),
-                        SizedBox(
-                          height: 68,
-                          width: 64,
-                          child: TextFormField(
-                            onChanged: (value) {
-                              if (value.length == 1) {
-                                FocusScope.of(context).nextFocus();
-                              }
-                            },
-                            decoration: const InputDecoration(
-                                hintText: "0", border: OutlineInputBorder()),
-                            //style: Theme.of(context).textTheme.headline6,
-                            keyboardType: TextInputType.number,
-                            textAlign: TextAlign.center,
-                            inputFormatters: [
-                              LengthLimitingTextInputFormatter(1),
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                          ),
+                        CustomOTPField(
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              code = code + value;
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
                         ),
-                        SizedBox(
-                          height: 68,
-                          width: 64,
-                          child: TextFormField(
-                            onChanged: (value) {
-                              if (value.length == 1) {
-                                
-                                FocusScope.of(context).nextFocus();
-                              }
-                            },
-                            decoration: const InputDecoration(
-                                hintText: "0", border: OutlineInputBorder()),
-                            //style: Theme.of(context).textTheme.headline6,
-                            keyboardType: TextInputType.number,
-                            textAlign: TextAlign.center,
-                            inputFormatters: [
-                              LengthLimitingTextInputFormatter(1),
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                          ),
+                        CustomOTPField(
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              code = code + value;
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
                         ),
-                        SizedBox(
-                          height: 68,
-                          width: 64,
-                          child: TextField(
-                            decoration: const InputDecoration(
-                                hintText: "0", border: OutlineInputBorder()),
-                            //style: Theme.of(context).textTheme.headline6,
-                            keyboardType: TextInputType.number,
-                            textAlign: TextAlign.center,
-                            inputFormatters: [
-                              LengthLimitingTextInputFormatter(1),
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                          ),
+                        CustomOTPField(
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              code = code + value;
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                        ),
+                        CustomOTPField(
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              code = code + value;
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                        ),
+                        CustomOTPField(
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              code = code + value;
+                              AuthenticationRepository.instance.verifyOTP(context, code);
+                            }
+                          },
                         ),
                       ],
                     ),
@@ -142,18 +112,15 @@ class _OTPScreenState extends State<OTPScreen> {
                     style: TextStyle(fontSize: 20),
                   ),
                   buttonType: ButtonType.text_button,
-                  
                   backgroundColor: Colors.blue,
                   duration: 30,
                 ),
-                
                 GestureDetector(
-                  onTap: () {
+                  onTap: () async {
                     formKey.currentState?.save();
-                    Navigator.pushReplacementNamed(context, '/home');
+                    AuthenticationRepository.instance.verifyOTP(context, code);
                   },
                   child: Container(
-                    
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.black,
@@ -172,6 +139,34 @@ class _OTPScreenState extends State<OTPScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomOTPField extends StatelessWidget {
+  const CustomOTPField({
+    super.key,
+    required this.onChanged,
+  });
+  final Function(String)? onChanged;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 68,
+      width: 64,
+      child: TextFormField(
+        onChanged: onChanged,
+
+        decoration:
+            const InputDecoration(hintText: "0", border: OutlineInputBorder()),
+        //style: Theme.of(context).textTheme.headline6,
+        keyboardType: TextInputType.number,
+        textAlign: TextAlign.center,
+        inputFormatters: [
+          LengthLimitingTextInputFormatter(1),
+          FilteringTextInputFormatter.digitsOnly,
+        ],
       ),
     );
   }

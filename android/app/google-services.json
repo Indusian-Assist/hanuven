@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "357379174827",
+    "project_id": "hanuven-29189",
+    "storage_bucket": "hanuven-29189.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357379174827:android:b2895a3709282663a0e2ee",
+        "android_client_info": {
+          "package_name": "com.example.hanuven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357379174827-cnq4fe7cmc74rqp6c9svtk1s06nm3lq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIOczukn5rxLNKc1dktTwi2K7ANerMRGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357379174827-cnq4fe7cmc74rqp6c9svtk1s06nm3lq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

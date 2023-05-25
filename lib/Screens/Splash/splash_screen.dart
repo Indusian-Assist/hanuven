@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:hanuven/utils/Auth/authentication_repository.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 
@@ -16,7 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/guid');
+      AuthenticationRepository.instance.firebaseUser.value == null
+          ? Navigator.pushReplacementNamed(context, '/guid')
+          : Navigator.pushReplacementNamed(context, '/home');
     });
     super.initState();
   }

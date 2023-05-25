@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-        appBar: Components.customPreferredSize(),
+        appBar: Components.customPreferredSize(context),
         body: Body());
   }
 

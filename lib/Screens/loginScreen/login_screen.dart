@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_launcher_icons/android.dart';
+import 'package:hanuven/utils/Auth/authentication_repository.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'Componets/custom_numberfield.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
-
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -16,7 +15,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   String initialCountry = 'IN';
   PhoneNumber number = PhoneNumber(isoCode: 'IN');
   void getPhoneNumber(String phoneNumber) async {
@@ -28,16 +27,16 @@ class _LoginScreenState extends State<LoginScreen> {
     });
   }
 
+  String phoneNo = '';
   @override
   void dispose() {
-    controller.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(),
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(
@@ -70,18 +69,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           children: <Widget>[
                             Container(
                               padding: EdgeInsets.symmetric(horizontal: 20),
-                              // decoration: BoxDecoration(
-                              //     border: Border.all(width: 1),
-                              //     borderRadius: BorderRadius.circular(10)),
                               child: InternationalPhoneNumberInput(
                                 onInputChanged: (PhoneNumber number) {
-                                  print(number.phoneNumber);
+                                  print(number.phoneNumber.toString());
                                 },
                                 onInputValidated: (bool value) {
                                   print(value);
                                 },
                                 selectorConfig: SelectorConfig(
-                                  selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                                  selectorType:
+                                      PhoneInputSelectorType.BOTTOM_SHEET,
                                 ),
                                 ignoreBlank: false,
                                 autoValidateMode:
@@ -89,18 +86,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                 selectorTextStyle:
                                     TextStyle(color: Colors.black),
                                 initialValue: number,
-                                
-                                textFieldController: controller,
+                                textFieldController: _controller,
                                 formatInput: true,
                                 keyboardType: TextInputType.numberWithOptions(
                                     signed: true, decimal: true),
-                                inputBorder: OutlineInputBorder(  ),
-                                searchBoxDecoration: InputDecoration(
-                                  fillColor: kDarkGreyColor
-                                ),
-                                
+                                inputBorder: OutlineInputBorder(),
+                                searchBoxDecoration:
+                                    InputDecoration(fillColor: kDarkGreyColor),
                                 onSaved: (PhoneNumber number) {
-                                  print('On Saved: $number');
+                                  setState(() {
+                                    this.number = number;
+                                    phoneNo = number.phoneNumber.toString();
+                                  });
+                                  print('On Saved: ${number}');
                                 },
                               ),
                             ),
@@ -146,9 +144,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       )),
                     ),
                     GestureDetector(
-                      onTap: () {
+                      onTap: () async {
                         formKey.currentState?.save();
-                        Navigator.pushReplacementNamed(context, '/otp');
+                       AuthenticationRepository.instance.phoneAuthentication(
+                            context, number.phoneNumber.toString());
                       },
                       child: Container(
                         decoration: BoxDecoration(

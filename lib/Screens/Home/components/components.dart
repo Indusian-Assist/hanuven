@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/Auth/authentication_repository.dart';
 
 import '../../../utils/constants/color.dart';
 import '../../../utils/constants/images_icons.dart';
 
 class Components {
-  static AppBar customAppBar() {
+  static AppBar customAppBar(context) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -16,9 +17,9 @@ class Components {
           borderRadius: BorderRadius.circular(25),
         ),
         child: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
+          icon: const Icon(Icons.logout),
           onPressed: () {
-            //todo: Srijan add a perform action
+            AuthenticationRepository.instance.signOut(context);
           },
         ),
       ),
@@ -41,12 +42,12 @@ class Components {
     );
   }
 
-  static PreferredSize customPreferredSize() {
+  static PreferredSize customPreferredSize(context) {
     return PreferredSize(
       preferredSize: Size.fromHeight(75.0),
       child: Padding(
         padding: EdgeInsets.all(10),
-        child: Components.customAppBar(),
+        child: Components.customAppBar(context),
       ),
     );
   }
