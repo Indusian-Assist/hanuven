@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hanuven/Screens/GuidScreen/welcome_screen.dart';
 import 'package:hanuven/Screens/Home/home_screen.dart';
-import 'package:hanuven/Screens/Scanner/scanner_screen.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
 import '../Screens/Scanner/components/qr_scan.dart';
 import '../Screens/Scanner/components/scan_result.dart';
