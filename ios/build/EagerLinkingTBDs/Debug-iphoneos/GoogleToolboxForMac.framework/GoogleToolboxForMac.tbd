@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-ios ]
+flags:           [ not_app_extension_safe ]
+install-name:    '@rpath/GoogleToolboxForMac.framework/GoogleToolboxForMac'
+exports:
+  - targets:         [ arm64-ios ]
+    symbols:         [ _GTMNSDataZlibErrorDomain, _GTMNSDataZlibErrorKey, _GTMNSDataZlibRemainingBytesKey, 
+                       _GoogleToolboxForMacVersionNumber, _GoogleToolboxForMacVersionString ]
+    objc-classes:    [ GTMLogAllowedLevelFilter, GTMLogBasicFormatter, GTMLogLevelFilter, 
+                       GTMLogMaximumLevelFilter, GTMLogMininumLevelFilter, GTMLogNoFilter, 
+                       GTMLogStandardFormatter, GTMLogger, PodsDummy_GoogleToolboxForMac ]
+...

@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Debug-iphoneos/libphonenumber_plugin/libphonenumber_plugin.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Pods.build/Debug-iphoneos/libphonenumber_plugin.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Debug-iphoneos/libphonenumber_plugin/libphonenumber_plugin.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "libphonenumber_plugin-Swift.h",
+      'external-contents': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Pods.build/Debug-iphoneos/libphonenumber_plugin.build/unextended-interface-header.h",
+    }]
+    }]
+}

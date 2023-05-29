@@ -1,0 +1,21 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "b5e903e95cf8bd7ef373365280108020b82c4c90f34a48eaacdde7b1384e5fb5"
+build_start_time: [1685311098, 423679000]
+build_end_time: [1685311105, 700551000]
+inputs:
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/Bundle+Resources.swift": !private [1685300564, 503339232]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/Constants.swift": !private [1685300564, 500580549]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/Formatter.swift": !private [1685300564, 508380304]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/MetadataManager.swift": !private [1685300564, 508727356]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/MetadataParsing.swift": !private [1685300564, 504511134]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/MetadataTypes.swift": !private [1685300564, 504234158]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/NSRegularExpression+Swift.swift": !private [1685300564, 507969836]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/ParseManager.swift": !private [1685300564, 504798478]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/PartialFormatter.swift": !private [1685300564, 509316242]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/PhoneNumber.swift": !private [1685300564, 503651934]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/PhoneNumberFormatter.swift": !private [1685300564, 509621990]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/PhoneNumberKit.swift": !private [1685300564, 509940146]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/PhoneNumberParser.swift": !private [1685300564, 510274291]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/RegexManager.swift": !private [1685300564, 503928785]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/UI/CountryCodePickerViewController.swift": !private [1685300564, 501541262]
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/PhoneNumberKit/PhoneNumberKit/UI/PhoneNumberTextField.swift": !private [1685300564, 502975941]

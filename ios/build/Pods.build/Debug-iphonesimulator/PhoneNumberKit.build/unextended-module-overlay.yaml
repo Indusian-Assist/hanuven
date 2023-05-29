@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/srijansamridh/Documents/flutter/hanuven/build/ios/Debug-iphonesimulator/PhoneNumberKit/PhoneNumberKit.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Pods.build/Debug-iphonesimulator/PhoneNumberKit.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/srijansamridh/Documents/flutter/hanuven/build/ios/Debug-iphonesimulator/PhoneNumberKit/PhoneNumberKit.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "PhoneNumberKit-Swift.h",
+      'external-contents': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Pods.build/Debug-iphonesimulator/PhoneNumberKit.build/unextended-interface-header.h",
+    }]
+    }]
+}

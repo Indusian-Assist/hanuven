@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-ios ]
+flags:           [ not_app_extension_safe ]
+install-name:    '@rpath/sms_autofill.framework/sms_autofill'
+exports:
+  - targets:         [ arm64-ios ]
+    symbols:         [ _sms_autofillVersionNumber, _sms_autofillVersionString ]
+    objc-classes:    [ PodsDummy_sms_autofill, SmsAutoFillPlugin ]
+...

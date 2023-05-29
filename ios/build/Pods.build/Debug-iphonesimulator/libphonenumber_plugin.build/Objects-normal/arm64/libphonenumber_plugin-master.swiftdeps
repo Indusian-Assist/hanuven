@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "74b543e313e4615a0b01e3411a932ebdcff2702e05b15e8c180e5173a1f70790"
+build_start_time: [1685338078, 822425000]
+build_end_time: [1685338086, 528166000]
+inputs:
+  "/Users/srijansamridh/.pub-cache/hosted/pub.dev/libphonenumber_plugin-0.3.1/ios/Classes/SwiftLibphonenumberPlugin.swift": [1684412527, 515225134]

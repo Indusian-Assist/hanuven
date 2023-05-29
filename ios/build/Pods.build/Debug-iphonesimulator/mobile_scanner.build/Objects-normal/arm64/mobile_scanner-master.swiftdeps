@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "75fffcdaa5a99b5998f161357c020aea0a9ac5edcf4405b483f09d6b9d69bd19"
+build_start_time: [1685338065, 539125000]
+build_end_time: [1685338086, 943281000]
+inputs:
+  "/Users/srijansamridh/.pub-cache/hosted/pub.dev/mobile_scanner-3.2.0/ios/Classes/BarcodeHandler.swift": [1683921158, 841648120]
+  "/Users/srijansamridh/.pub-cache/hosted/pub.dev/mobile_scanner-3.2.0/ios/Classes/DetectionSpeed.swift": [1683921158, 835756027]
+  "/Users/srijansamridh/.pub-cache/hosted/pub.dev/mobile_scanner-3.2.0/ios/Classes/MobileScanner.swift": [1683921158, 836788139]
+  "/Users/srijansamridh/.pub-cache/hosted/pub.dev/mobile_scanner-3.2.0/ios/Classes/MobileScannerError.swift": [1683921158, 840836255]
+  "/Users/srijansamridh/.pub-cache/hosted/pub.dev/mobile_scanner-3.2.0/ios/Classes/MobileScannerUtilities.swift": [1683921158, 839143610]
+  "/Users/srijansamridh/.pub-cache/hosted/pub.dev/mobile_scanner-3.2.0/ios/Classes/SwiftMobileScannerPlugin.swift": [1683921158, 842776564]

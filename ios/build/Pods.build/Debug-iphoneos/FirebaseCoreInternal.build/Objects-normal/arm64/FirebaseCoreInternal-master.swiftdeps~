@@ -1,0 +1,27 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "87cde827f8beb88e5be6347b8029c15bcfdddd66f983667f5266876c58c2fde9"
+build_start_time: [1685300441, 805863000]
+build_end_time: [1685300442, 2374000]
+inputs:
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Heartbeat.swift"
+  : !private [1685248046, 263300277]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatController.swift"
+  : !private [1685248046, 264395962]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatStorage.swift"
+  : !private [1685248046, 265037197]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsBundle.swift"
+  : !private [1685248046, 265435564]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsPayload.swift"
+  : !private [1685248046, 266174881]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/RingBuffer.swift"
+  : !private [1685248046, 263861473]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Storage.swift"
+  : !private [1685248046, 263023450]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/StorageFactory.swift"
+  : !private [1685248046, 266412667]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/WeakContainer.swift"
+  : !private [1685248046, 265735807]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatController.swift"
+  : !private [1685248046, 264080552]
+  ? "/Users/srijansamridh/Documents/flutter/hanuven/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift"
+  : !private [1685248046, 264702205]

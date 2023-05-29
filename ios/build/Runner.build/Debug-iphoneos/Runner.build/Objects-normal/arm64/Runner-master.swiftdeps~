@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "d45f288093cb4d4068cad7b2d88cb39416cdfb7340e829bf3a20b93bd9d7826b"
+build_start_time: [1685310985, 240445000]
+build_end_time: [1685310985, 282229000]
+inputs:
+  "/Users/srijansamridh/Documents/flutter/hanuven/ios/Runner/AppDelegate.swift": !private [1681904588, 0]
