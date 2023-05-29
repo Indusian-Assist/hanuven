@@ -20,4 +20,4 @@ dependencies: \
   /Users/srijansamridh/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
   /Users/srijansamridh/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
   /Users/srijansamridh/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/FlutterViewController.h \
-  /Users/srijansamridh/Documents/flutter/hanuven/ios/build/Debug-iphoneos/mobile_scanner/mobile_scanner.framework/Headers/mobile_scanner-Swift.h
+  /Users/srijansamridh/Documents/flutter/hanuven/build/ios/Debug-iphoneos/mobile_scanner/mobile_scanner.framework/Headers/mobile_scanner-Swift.h

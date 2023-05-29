@@ -4,7 +4,7 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Debug-iphoneos/mobile_scanner/mobile_scanner.framework/Modules"
+    'name': "/Users/srijansamridh/Documents/flutter/hanuven/build/ios/Debug-iphoneos/mobile_scanner/mobile_scanner.framework/Modules"
     'contents': [{
       'type': 'file',
       'name': "module.modulemap",
@@ -13,7 +13,7 @@
     },
     {
     'type': 'directory',
-    'name': "/Users/srijansamridh/Documents/flutter/hanuven/ios/build/Debug-iphoneos/mobile_scanner/mobile_scanner.framework/Headers"
+    'name': "/Users/srijansamridh/Documents/flutter/hanuven/build/ios/Debug-iphoneos/mobile_scanner/mobile_scanner.framework/Headers"
     'contents': [{
       'type': 'file',
       'name': "mobile_scanner-Swift.h",
