@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "357379174827-dm0pd58rrlh4jpocbjlg61cfrd4mp9rp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hanuven",
+            "certificate_hash": "5a24b7de66efbafc46e0b34073dedc96dff9d509"
+          }
+        },
+        {
           "client_id": "357379174827-cnq4fe7cmc74rqp6c9svtk1s06nm3lq3.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "357379174827-cnq4fe7cmc74rqp6c9svtk1s06nm3lq3.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "357379174827-hkrjlr8pg14artok9f40qj6dp4tni8s5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hanuven"
+              }
             }
           ]
         }

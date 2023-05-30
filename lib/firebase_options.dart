@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,7 +43,36 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyA2H9bGKqOaxFyT8dhNTOCkSty2HJTQ7ZQ',
+    appId: '1:357379174827:web:3cd450b71a10671da0e2ee',
+    messagingSenderId: '357379174827',
+    projectId: 'hanuven-29189',
+    authDomain: 'hanuven-29189.firebaseapp.com',
+    storageBucket: 'hanuven-29189.appspot.com',
+    measurementId: 'G-BLMG16H9VN',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyBIOczukn5rxLNKc1dktTwi2K7ANerMRGU',
+    appId: '1:357379174827:android:b2895a3709282663a0e2ee',
+    messagingSenderId: '357379174827',
+    projectId: 'hanuven-29189',
+    storageBucket: 'hanuven-29189.appspot.com',
+  );
+
   static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDv5MgI9G1eycav0r-h9f4LMTiYOQ3Onko',
+    appId: '1:357379174827:ios:97898a53e189bfbea0e2ee',
+    messagingSenderId: '357379174827',
+    projectId: 'hanuven-29189',
+    storageBucket: 'hanuven-29189.appspot.com',
+    androidClientId: '357379174827-dm0pd58rrlh4jpocbjlg61cfrd4mp9rp.apps.googleusercontent.com',
+    iosClientId: '357379174827-hkrjlr8pg14artok9f40qj6dp4tni8s5.apps.googleusercontent.com',
+    iosBundleId: 'com.example.hanuven',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDv5MgI9G1eycav0r-h9f4LMTiYOQ3Onko',
     appId: '1:357379174827:ios:97898a53e189bfbea0e2ee',
     messagingSenderId: '357379174827',
