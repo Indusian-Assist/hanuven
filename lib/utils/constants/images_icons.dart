@@ -43,6 +43,10 @@ const AssetImage loginImage = AssetImage(loginUrl);
 const String otpUrl = 'assets/images/otpscreen.png';
 const AssetImage otpImage = AssetImage(otpUrl);
 
+//This is image for retailer login screen
+const String retailerurl = 'assets/images/retailerlogin.png';
+const AssetImage retailImage = AssetImage(retailerurl);
+
 // This is the default image of products
 const String kProduct1Url = 'assets/images/product1.jpg';
 const AssetImage kProduct1Image = AssetImage(kProduct1Url);
