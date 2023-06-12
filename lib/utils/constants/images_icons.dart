@@ -57,3 +57,11 @@ const AssetImage kProduct2Image = AssetImage(kProduct2Url);
 // This is the image for home screen rings
 const String kHomeScreenRingsUrl = 'assets/images/homescreenrings.png';
 const AssetImage kHomeScreenRingsImage = AssetImage(kHomeScreenRingsUrl);
+
+// This is the image forprofile screen 
+const String kProfileImageUrl = 'assets/images/profilepicture.jpg';
+const AssetImage kProfileImage = AssetImage(kProfileImageUrl);
+
+// This is the image forprofile screen background
+const String kProfilebgImageUrl = 'assets/images/profilebackground.jpg';
+const AssetImage kProfileBgImage = AssetImage(kProfilebgImageUrl);

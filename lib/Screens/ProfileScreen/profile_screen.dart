@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hanuven/Screens/ProfileScreen/Components/retailer.dart';
 import 'Components/body.dart';
 
 class ProfileScreen extends StatefulWidget {

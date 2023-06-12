@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 
-class Body extends StatelessWidget {
-  const Body({super.key});
+class Retailer extends StatelessWidget {
+  const Retailer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +64,11 @@ class Body extends StatelessWidget {
                 height: 90,
               ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.all(2.0),
+                    margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: size.width /12 +2),
+                    padding: EdgeInsets.all(2),
                     height: 150,
                     width: 150,
                     decoration: BoxDecoration(
@@ -75,50 +76,54 @@ class Body extends StatelessWidget {
                         image: DecorationImage(
                             image: kProfileImage, fit: BoxFit.cover)),
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    height: 50,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Tanishk Sahni',
-                          style: GoogleFonts.urbanist(
-                              fontSize: 25, fontWeight: FontWeight.bold),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        height: 50,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Tanishk Sahni',
+                              style: GoogleFonts.urbanist(
+                                  fontSize: 25, fontWeight: FontWeight.bold),
+                            ),
+                            IconButton(
+                              padding: EdgeInsets.all(0.0),
+                              icon: Icon(Icons.edit_document),
+                              onPressed: () {
+                                //Todo: perform an action
+                              },
+                            ),
+                          ],
                         ),
-                        IconButton(
-                          padding: EdgeInsets.all(0.0),
-                          icon: Icon(Icons.edit_document),
-                          onPressed: () {
-                            //Todo: perform an action
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 3.0),
-                    padding: EdgeInsets.all(5.0),
-                    alignment: Alignment.center,
-                    width: 100,
-                    child: Text(
-                      'Primary',
-                      style: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: const Color.fromARGB(255, 100, 169, 224),
                       ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 229, 234, 239),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 3.0),
+                        padding: EdgeInsets.all(5.0),
+                        alignment: Alignment.center,
+                        width: 100,
+                        child: Text(
+                          'RETAILER',
+                          style: GoogleFonts.urbanist(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 3.0),
                     padding: EdgeInsets.all(5.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.pin_drop),
                         Text('Delhi, India'),
@@ -146,7 +151,7 @@ class Body extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: Text(
-                  'Scanned Products',
+                  'Products Activated',
                   style: GoogleFonts.urbanist(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -186,6 +191,9 @@ class Body extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 50,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -196,7 +204,7 @@ class Body extends StatelessWidget {
                     child: Container(
                       height: 50,
                       width: 280,
-                      margin: EdgeInsets.symmetric(vertical: 20),
+                      margin: EdgeInsets.symmetric(vertical: 12),
                       padding: EdgeInsets.symmetric(vertical: 5.0),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
@@ -231,26 +239,24 @@ class CustomClipPath extends CustomClipper<Path> {
 
     final path = Path();
 
-    var firstStart = Offset(w / 4, h);
-    var firstEnd = Offset(w / 3, h - h / 6);
+    var firstStart = Offset(w/12, h);
+    var firstEnd = Offset(w/6, h - h/6);
 
-    var secondStart = Offset(w / 2, h / 2);
-    var secondEnd = Offset(w * (2 / 3), h - h / 6);
+    var secondStart = Offset(w/3,h/2);
+    var secondEnd = Offset(w/2, h - h/6);
 
-    var thirdStart = Offset(w * (3 / 4), h);
-    var thirdEnd = Offset(w * (10 / 12), h);
+    var thirdStart = Offset(w*(7/12), h);
+    var thirdEnd = Offset(w*(2/3), h);
 
     path.moveTo(0, 0); // 1. Point
     path.lineTo(0, h); // 2. Point
-    path.lineTo(w / 6, h); // 3. Point
     path.quadraticBezierTo(
-        firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy); //4,5. Point
-    path.quadraticBezierTo(secondStart.dx, secondStart.dy, secondEnd.dx,
-        secondEnd.dy); //6,7. Point
+        firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy); //3,4. Point 
     path.quadraticBezierTo(
-        thirdStart.dx, thirdStart.dy, thirdEnd.dx, thirdEnd.dy); //8,9. Point
-    path.lineTo(w, h); //10. Point
-    path.lineTo(w, 0); // 11. Point
+        secondStart.dx, secondStart.dy, secondEnd.dx, secondEnd.dy); // 5,6. Point
+    path.quadraticBezierTo(thirdStart.dx, thirdStart.dy, thirdEnd.dx, thirdEnd.dy); //7,8. Point
+    path.lineTo(w, h);  //9. Point
+    path.lineTo(w, 0);  //10. Point
     path.close();
     return path;
   }
