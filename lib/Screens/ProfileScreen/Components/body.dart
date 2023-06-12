@@ -7,17 +7,20 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
-        Container(
-          height: 200,
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(25)),
-              image: DecorationImage(image: kProduct1Image, fit: BoxFit.cover)),
+        ClipPath(
+          clipper: CustomClipPath(),
+          child: Container(
+            height: size.height/4,
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+                image: DecorationImage(image: kProduct1Image, fit: BoxFit.cover)),
+          ),
         ),
         Container(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -27,7 +30,6 @@ class Body extends StatelessWidget {
                   Container(
                     height: 40,
                     width: 40,
-                    margin: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.5),
                       borderRadius: BorderRadius.circular(25),
@@ -49,7 +51,6 @@ class Body extends StatelessWidget {
                   Container(
                     height: 40,
                     width: 40,
-                    margin: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.5),
                       borderRadius: BorderRadius.circular(25),
@@ -64,7 +65,7 @@ class Body extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 50,
+                height: 90,
               ),
               Column(
                 children: [
@@ -72,10 +73,11 @@ class Body extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
+                        margin: EdgeInsets.all(10.0),
                         height: 150,
                         width: 150,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(75),
+                            borderRadius: BorderRadius.circular(100),
                             image: DecorationImage(
                                 image: kProduct2Image, fit: BoxFit.cover)),
                       ),
@@ -219,5 +221,47 @@ class Body extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+
+class CustomClipPath extends CustomClipper<Path> {
+
+  @override
+  Path getClip(Size size) {
+    double w = size.width;
+    double h = size.height;
+
+    final path = Path();
+
+    var firstStart = Offset(w/4, h);
+    var firstEnd = Offset(w/3,h- h/6);
+
+    var secondStart = Offset(w/2, h/2);
+    var secondEnd = Offset(w*(2/3),h-h/6);
+
+    //var secondStart = Offset(w*(5/12),h-h/3);
+    //var secondEnd = Offset(w/2, h/2);
+
+    //var thirdStart = Offset(w*(7/12) ,h-h/3);
+    //var thirdEnd = Offset(w*(2/3),h-h/6);
+
+    var fourthStart = Offset(w*(3/4), h);
+    var fourthEnd = Offset(w, h);
+
+    path.moveTo(0,0); // 1. Point
+    path.lineTo(0, h);  // 2. Point
+    path.quadraticBezierTo(firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy);
+    path.quadraticBezierTo(secondStart.dx, secondStart.dy, secondEnd.dx, secondEnd.dy);
+    //path.quadraticBezierTo(thirdStart.dx, thirdStart.dy, thirdEnd.dx, thirdEnd.dy);
+    path.quadraticBezierTo(fourthStart.dx, fourthStart.dy, fourthEnd.dx, fourthEnd.dy);
+    path.lineTo(w, h);
+    path.lineTo(w, 0);  // 4. Point 
+    path.close();
+    return path;
+    }
+    @override
+    bool shouldReclip(CustomClipper<Path> oldClipper) {
+      return false;
   }
 }

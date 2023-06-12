@@ -12,9 +12,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: SafeArea(child: Body())),
+      body: SafeArea(child: Body()),
     );
   }
 }
