@@ -43,6 +43,10 @@ const AssetImage loginImage = AssetImage(loginUrl);
 const String otpUrl = 'assets/images/otpscreen.png';
 const AssetImage otpImage = AssetImage(otpUrl);
 
+//This is image for retailer login screen
+const String retailerurl = 'assets/images/retailerlogin.png';
+const AssetImage retailImage = AssetImage(retailerurl);
+
 // This is the default image of products
 const String kProduct1Url = 'assets/images/product1.jpg';
 const AssetImage kProduct1Image = AssetImage(kProduct1Url);
@@ -53,3 +57,11 @@ const AssetImage kProduct2Image = AssetImage(kProduct2Url);
 // This is the image for home screen rings
 const String kHomeScreenRingsUrl = 'assets/images/homescreenrings.png';
 const AssetImage kHomeScreenRingsImage = AssetImage(kHomeScreenRingsUrl);
+
+// This is the image forprofile screen 
+const String kProfileImageUrl = 'assets/images/profilepicture.jpg';
+const AssetImage kProfileImage = AssetImage(kProfileImageUrl);
+
+// This is the image forprofile screen background
+const String kProfilebgImageUrl = 'assets/images/profilebackground.jpg';
+const AssetImage kProfileBgImage = AssetImage(kProfilebgImageUrl);
