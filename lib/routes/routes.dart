@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hanuven/Screens/GuidScreen/welcome_screen.dart';
 import 'package:hanuven/Screens/Home/home_screen.dart';
+import 'package:hanuven/Screens/ProfileScreen/Components/edit_profile.dart';
+import 'package:hanuven/Screens/ProfileScreen/profile_screen.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
 import 'package:hanuven/Screens/loginScreen/otp_screen.dart';
 import '../Screens/Scanner/components/qr_scan.dart';
@@ -12,7 +14,7 @@ import '../Screens/Splash/splash_screen.dart';
 onGenerateInitialRoutes(String initialRoute) {
   return [
     MaterialPageRoute(
-      builder: (context) => const SplashScreen(),
+      builder: (context) => const ProfileScreen(),
       settings: const RouteSettings(name: '/splash'),
     ),
   ];
@@ -50,13 +52,18 @@ onGenerateRoute(RouteSettings settings) {
           direction: AxisDirection.left);
     case '/scanResult':
       return CustomPageRoute(
-          child: ResultScreen(closeScreen: () {  }, code: ''),
+          child: ResultScreen(closeScreen: () {}, code: ''),
           settings: settings,
           direction: AxisDirection.up);
     case '/success':
       return CustomPageRoute(
-        child: SuccessScreen(),
-        settings: settings,
-        direction: AxisDirection.up);
+          child: SuccessScreen(),
+          settings: settings,
+          direction: AxisDirection.up);
+    case '/editprofile':
+      return CustomPageRoute(
+          child: EditProfile(),
+          settings: settings,
+          direction: AxisDirection.up);
   }
 }
