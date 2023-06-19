@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBIOczukn5rxLNKc1dktTwi2K7ANerMRGU',
-    appId: '1:357379174827:android:b2895a3709282663a0e2ee',
+    appId: '1:357379174827:android:fdc36c68e2a3f801a0e2ee',
     messagingSenderId: '357379174827',
     projectId: 'hanuven-29189',
     storageBucket: 'hanuven-29189.appspot.com',
@@ -63,23 +63,23 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDv5MgI9G1eycav0r-h9f4LMTiYOQ3Onko',
-    appId: '1:357379174827:ios:97898a53e189bfbea0e2ee',
+    appId: '1:357379174827:ios:ec484acdc0b479ffa0e2ee',
     messagingSenderId: '357379174827',
     projectId: 'hanuven-29189',
     storageBucket: 'hanuven-29189.appspot.com',
     androidClientId: '357379174827-dm0pd58rrlh4jpocbjlg61cfrd4mp9rp.apps.googleusercontent.com',
-    iosClientId: '357379174827-hkrjlr8pg14artok9f40qj6dp4tni8s5.apps.googleusercontent.com',
-    iosBundleId: 'com.example.hanuven',
+    iosClientId: '357379174827-c8pb5emmco0oar5qma555c7be5rmr1n8.apps.googleusercontent.com',
+    iosBundleId: 'com.indusianassist.hanuven',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDv5MgI9G1eycav0r-h9f4LMTiYOQ3Onko',
-    appId: '1:357379174827:ios:97898a53e189bfbea0e2ee',
+    appId: '1:357379174827:ios:ec484acdc0b479ffa0e2ee',
     messagingSenderId: '357379174827',
     projectId: 'hanuven-29189',
     storageBucket: 'hanuven-29189.appspot.com',
     androidClientId: '357379174827-dm0pd58rrlh4jpocbjlg61cfrd4mp9rp.apps.googleusercontent.com',
-    iosClientId: '357379174827-hkrjlr8pg14artok9f40qj6dp4tni8s5.apps.googleusercontent.com',
-    iosBundleId: 'com.example.hanuven',
+    iosClientId: '357379174827-c8pb5emmco0oar5qma555c7be5rmr1n8.apps.googleusercontent.com',
+    iosBundleId: 'com.indusianassist.hanuven',
   );
 }

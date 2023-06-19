@@ -48,6 +48,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357379174827:android:fdc36c68e2a3f801a0e2ee",
+        "android_client_info": {
+          "package_name": "com.indusianassist.hanuven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357379174827-cnq4fe7cmc74rqp6c9svtk1s06nm3lq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIOczukn5rxLNKc1dktTwi2K7ANerMRGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357379174827-cnq4fe7cmc74rqp6c9svtk1s06nm3lq3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "357379174827-hkrjlr8pg14artok9f40qj6dp4tni8s5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hanuven"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
