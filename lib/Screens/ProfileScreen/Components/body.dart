@@ -90,7 +90,7 @@ class Body extends StatelessWidget {
                           padding: EdgeInsets.all(0.0),
                           icon: Icon(Icons.edit_document),
                           onPressed: () {
-                            //Todo: perform an action
+                            Navigator.pushNamed(context, '/editprofile');
                           },
                         ),
                       ],
