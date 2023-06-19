@@ -68,21 +68,15 @@ class EditProfile extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.all(2.0),
-                            height: 150,
-                            width: 150,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                image: DecorationImage(
-                                    image: kProfileImage, fit: BoxFit.cover,  opacity: 0.8)),
-                          ),
-                          IconButton(onPressed: () { }, icon: Icon(Icons.edit)),
-                        ],
-                      ),
+                      Container(
+                        margin: EdgeInsets.all(2.0),
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            image: DecorationImage(
+                                image: kProfileImage, fit: BoxFit.cover,  opacity: 0.8)),
+                      ),IconButton(onPressed: () { }, icon: Icon(Icons.edit)),
                     ],
                   ),
                 ),
