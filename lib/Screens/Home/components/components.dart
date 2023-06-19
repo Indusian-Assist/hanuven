@@ -27,7 +27,7 @@ class Components {
         Container(
           child: InkWell(
             onTap: () {
-              // Todo: Srijan add a perform action
+              Navigator.pushNamed(context, '/profile');
             },
             child: Ink.image(
               image: AssetImage(
