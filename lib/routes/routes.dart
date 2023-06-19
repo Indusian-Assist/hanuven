@@ -14,7 +14,7 @@ import '../Screens/Splash/splash_screen.dart';
 onGenerateInitialRoutes(String initialRoute) {
   return [
     MaterialPageRoute(
-      builder: (context) => const ProfileScreen(),
+      builder: (context) => const SplashScreen(),
       settings: const RouteSettings(name: '/splash'),
     ),
   ];
@@ -65,5 +65,10 @@ onGenerateRoute(RouteSettings settings) {
           child: EditProfile(),
           settings: settings,
           direction: AxisDirection.up);
+    case '/profile':
+      return CustomPageRoute(
+          child: ProfileScreen(),
+          settings: settings,
+          direction: AxisDirection.left);
   }
 }

@@ -9,7 +9,7 @@ import '../../api/services/app_exceptions.dart';
 class BaseClient {
   // ignore: constant_identifier_names
   static const int TIME_OUT_DURATION = 20;
-
+  // static var client = http.Client();
   // GET request
   Future<dynamic> get(String baseUrl, String api) async {
     var uri = Uri.parse(baseUrl + api);
