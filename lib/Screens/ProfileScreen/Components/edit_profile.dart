@@ -106,7 +106,7 @@ class _EditProfileState extends State<EditProfile> {
                           children: <Widget>[
                             //name
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8),
+                              padding: EdgeInsets.symmetric(vertical: 5),
                               child: TextFormField(
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
@@ -115,10 +115,12 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                               ),
                             ),
-
+                            SizedBox(
+                              height: 10,
+                            ),
                             //location
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8),
+                              padding: EdgeInsets.symmetric(vertical: 5),
                               child: TextFormField(
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
@@ -127,10 +129,12 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                               ),
                             ),
-
+                            SizedBox(
+                              height: 10,
+                            ),
                             //type of customer
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8),
+                              padding: EdgeInsets.symmetric(vertical: 5),
                               child: TextFormField(
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
@@ -139,15 +143,18 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                               ),
                             ),
-
+                            SizedBox(
+                              height: 10,
+                            ),
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8),
+                              padding: EdgeInsets.symmetric(vertical: 5),
                               child: TextFormField(
+                                maxLines: 5,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
-                                  hintText: 'Type',
-                                  labelText: 'Type',
-                                  hintMaxLines: 3,
+                                  hintText: 'About',
+                                  labelText: 'About...',
+                                  hintMaxLines: 5,
                                 ),
                               ),
                             ),

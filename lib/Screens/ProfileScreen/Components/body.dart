@@ -51,7 +51,7 @@ class Body extends StatelessWidget {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          //Todo: Srijan perform an action
+                          Navigator.pushReplacementNamed(context, '/home');
                         },
                         icon: Image.asset(
                           kMainIconUrl,

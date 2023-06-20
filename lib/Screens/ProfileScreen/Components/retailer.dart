@@ -18,8 +18,8 @@ class Retailer extends StatelessWidget {
               height: size.height / 4,
               width: double.maxFinite,
               decoration: BoxDecoration(
-                  image:
-                      DecorationImage(image: kProfileBgImage, fit: BoxFit.cover)),
+                  image: DecorationImage(
+                      image: kProfileBgImage, fit: BoxFit.cover)),
             ),
           ),
           Container(
@@ -51,7 +51,7 @@ class Retailer extends StatelessWidget {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          //Todo: Srijan perform an action
+                          Navigator.pushReplacementNamed(context, '/home');
                         },
                         icon: Image.asset(
                           kMainIconUrl,
@@ -69,7 +69,8 @@ class Retailer extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: size.width /12 +2),
+                      margin: EdgeInsets.symmetric(
+                          vertical: 2.0, horizontal: size.width / 12 + 2),
                       padding: EdgeInsets.all(2),
                       height: 150,
                       width: 150,
@@ -96,7 +97,7 @@ class Retailer extends StatelessWidget {
                                 padding: EdgeInsets.all(0.0),
                                 icon: Icon(Icons.edit_document),
                                 onPressed: () {
-                                  //Todo: perform an action
+                                  Navigator.pushNamed(context, '/editprofile');
                                 },
                               ),
                             ],
@@ -201,7 +202,7 @@ class Retailer extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        //Todo: Tanishk
+                        //Todo:
                       },
                       child: Container(
                         height: 50,
@@ -242,24 +243,25 @@ class CustomClipPath extends CustomClipper<Path> {
 
     final path = Path();
 
-    var firstStart = Offset(w/12, h);
-    var firstEnd = Offset(w/6, h - h/6);
+    var firstStart = Offset(w / 12, h);
+    var firstEnd = Offset(w / 6, h - h / 6);
 
-    var secondStart = Offset(w/3,h/2);
-    var secondEnd = Offset(w/2, h - h/6);
+    var secondStart = Offset(w / 3, h / 2);
+    var secondEnd = Offset(w / 2, h - h / 6);
 
-    var thirdStart = Offset(w*(7/12), h);
-    var thirdEnd = Offset(w*(2/3), h);
+    var thirdStart = Offset(w * (7 / 12), h);
+    var thirdEnd = Offset(w * (2 / 3), h);
 
     path.moveTo(0, 0); // 1. Point
     path.lineTo(0, h); // 2. Point
     path.quadraticBezierTo(
-        firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy); //3,4. Point 
+        firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy); //3,4. Point
+    path.quadraticBezierTo(secondStart.dx, secondStart.dy, secondEnd.dx,
+        secondEnd.dy); // 5,6. Point
     path.quadraticBezierTo(
-        secondStart.dx, secondStart.dy, secondEnd.dx, secondEnd.dy); // 5,6. Point
-    path.quadraticBezierTo(thirdStart.dx, thirdStart.dy, thirdEnd.dx, thirdEnd.dy); //7,8. Point
-    path.lineTo(w, h);  //9. Point
-    path.lineTo(w, 0);  //10. Point
+        thirdStart.dx, thirdStart.dy, thirdEnd.dx, thirdEnd.dy); //7,8. Point
+    path.lineTo(w, h); //9. Point
+    path.lineTo(w, 0); //10. Point
     path.close();
     return path;
   }
