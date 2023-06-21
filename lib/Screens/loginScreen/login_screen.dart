@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kBackgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 autoValidateMode:
                                     AutovalidateMode.onUserInteraction,
                                 selectorTextStyle:
-                                    TextStyle(color: Colors.black),
+                                    TextStyle(color: kDarkColor),
                                 initialValue: number,
                                 textFieldController: _controller,
                                 formatInput: true,
@@ -152,14 +152,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: Colors.black,
+                          color: kDarkColor,
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Icon(
                             Icons.arrow_right_alt,
                             size: 35,
-                            color: Colors.white,
+                            color: kLightColor,
                           ),
                         ),
                       ),

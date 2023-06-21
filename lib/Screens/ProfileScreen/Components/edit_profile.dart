@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 
 class EditProfile extends StatefulWidget {
@@ -53,7 +54,7 @@ class _EditProfileState extends State<EditProfile> {
                       //error
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: kBackgroundColor,
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: IconButton(
@@ -178,14 +179,14 @@ class _EditProfileState extends State<EditProfile> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: Color.fromARGB(255, 80, 151, 218),
+                            color: kButtonColor,
                           ),
                           child: Text(
                             'SAVE DETAILS',
                             style: GoogleFonts.urbanist(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: kLightColor,
                             ),
                           ),
                         ),

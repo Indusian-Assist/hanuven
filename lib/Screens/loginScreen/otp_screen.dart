@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hanuven/utils/Auth/authentication_repository.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:otp_timer_button/otp_timer_button.dart';
 
@@ -22,7 +23,7 @@ class _OTPScreenState extends State<OTPScreen> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 50, horizontal: 10),
-        color: Colors.white,
+        color: kBackgroundColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -104,7 +105,7 @@ class _OTPScreenState extends State<OTPScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 OtpTimerButton(
-                  textColor: Colors.black,
+                  textColor: kDarkColor,
                   height: 60,
                   onPressed: () {},
                   text: Text(
@@ -112,7 +113,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     style: TextStyle(fontSize: 20),
                   ),
                   buttonType: ButtonType.text_button,
-                  backgroundColor: Colors.blue,
+                  backgroundColor: kButtonColor,
                   duration: 30,
                 ),
                 GestureDetector(
@@ -123,14 +124,14 @@ class _OTPScreenState extends State<OTPScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Colors.black,
+                      color: kDarkColor,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.arrow_right_alt,
                         size: 35,
-                        color: Colors.white,
+                        color: kLightColor,
                       ),
                     ),
                   ),
@@ -180,7 +181,7 @@ class otpwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.white,
+        color: kBackgroundColor,
         child: Column(children: [
           Image(
             image: AssetImage('assets/images/otpscreen.png'),
@@ -220,7 +221,7 @@ class otpwidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kGreyColor,
                   ),
                 ),
                 child: TextField(
@@ -239,7 +240,7 @@ class otpwidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kGreyColor,
                   ),
                 ),
                 child: TextField(
@@ -258,7 +259,7 @@ class otpwidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kGreyColor,
                   ),
                 ),
                 child: TextField(
@@ -277,7 +278,7 @@ class otpwidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kGreyColor,
                   ),
                 ),
                 child: TextField(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 
 class Body extends StatelessWidget {
@@ -46,7 +47,7 @@ class Body extends StatelessWidget {
                     //error
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: kBackgroundColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: IconButton(
@@ -108,7 +109,7 @@ class Body extends StatelessWidget {
                         style: GoogleFonts.urbanist(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
-                          color: const Color.fromARGB(255, 100, 169, 224),
+                          color: kButtonColor,
                         ),
                       ),
                       decoration: BoxDecoration(
@@ -165,7 +166,7 @@ class Body extends StatelessWidget {
                         width: 75,
                         padding: EdgeInsets.all(5.0),
                         decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: Colors.grey),
+                          border: Border.all(width: 1, color: kGreyColor),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Column(
@@ -174,12 +175,12 @@ class Body extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.edit,
-                              color: Colors.grey,
+                              color: kGreyColor,
                             ),
                             Text(
                               'Product1',
                               style: GoogleFonts.urbanist(
-                                color: Colors.grey,
+                                color: kTextLightColor,
                               ),
                             ),
                           ],
@@ -193,7 +194,7 @@ class Body extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        //Todo: Tanishk
+                        //Todo: Srijan perform a action
                       },
                       child: Container(
                         height: 50,
@@ -203,14 +204,14 @@ class Body extends StatelessWidget {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: Color.fromARGB(255, 80, 151, 218),
+                          color: kButtonColor,
                         ),
                         child: Text(
                           'ORDER DETAILS',
                           style: GoogleFonts.urbanist(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: kLightColor,
                           ),
                         ),
                       ),

@@ -8,7 +8,7 @@ import '../../../utils/constants/images_icons.dart';
 class Components {
   static AppBar customAppBar(context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: kTransparentColor,
       elevation: 0,
       leading: Container(
         margin: const EdgeInsets.all(3),
@@ -57,17 +57,16 @@ class Components {
     return Container(
       height: 280,
       width: 180,
-      //margin: const EdgeInsets.all(3.0),
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           border: Border.all(width: 0),
           borderRadius: BorderRadius.circular(25),
-          color: Colors.black,
+          color: kDarkColor,
           boxShadow: const [
             BoxShadow(
               blurRadius: 15,
               spreadRadius: 10,
-              color: Color.fromARGB(31, 178, 173, 173),
+              color: kShadowColor,
             ),
           ]),
       child: Padding(

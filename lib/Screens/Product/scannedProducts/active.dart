@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 
 import '../../../utils/constants/images_icons.dart';
 
@@ -44,12 +45,12 @@ class ActiveScreen extends StatelessWidget {
                     //error
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: kBackgroundColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: IconButton(
                         onPressed: () {
-                          //Todo: Srijan perform an action
+                          Navigator.pushReplacementNamed(context, '/home');
                         },
                         icon: Image.asset(
                           kMainIconUrl,
@@ -79,7 +80,7 @@ class ActiveScreen extends StatelessWidget {
                           style: GoogleFonts.urbanist(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromRGBO(203, 44, 61, 1)),
+                              color: kRedTextColor),
                         ),
                       ),
                     ],
@@ -97,7 +98,7 @@ class ActiveScreen extends StatelessWidget {
                           Text('By Tanishk'),
                           Text('01 May, 2023, 16:39 PM',
                               style: GoogleFonts.urbanist(
-                                color: Colors.grey,
+                                color: kTextLightColor,
                               )),
                         ],
                       ),
@@ -105,7 +106,7 @@ class ActiveScreen extends StatelessWidget {
                         height: 30,
                         //padding: EdgeInsets.all(5.0),
                         decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color: kButtonColor,
                             borderRadius: BorderRadius.circular(25)),
                         child: TextButton(
                           onPressed: () {
@@ -113,7 +114,7 @@ class ActiveScreen extends StatelessWidget {
                           },
                           child: Text('CONTINUE SHOPPING'),
                           style: TextButton.styleFrom(
-                              foregroundColor: Colors.white,
+                              foregroundColor: kLightColor,
                               textStyle: GoogleFonts.urbanist(
                                   fontWeight: FontWeight.bold, fontSize: 12)),
                         ),

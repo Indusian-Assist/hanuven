@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import '../../../utils/constants/images_icons.dart';
 
 class ProductResult extends StatelessWidget {
@@ -43,12 +44,12 @@ class ProductResult extends StatelessWidget {
                     //error
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: kBackgroundColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: IconButton(
                         onPressed: () {
-                          //Todo: Srijan perform an action
+                          Navigator.pushReplacementNamed(context, '/home');
                         },
                         icon: Image.asset(
                           kMainIconUrl,
@@ -77,7 +78,7 @@ class ProductResult extends StatelessWidget {
                       height: 30,
                       //padding: EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
-                          color: Colors.black,
+                          color: kDarkColor,
                           borderRadius: BorderRadius.circular(25)),
                       child: TextButton(
                         onPressed: () {
@@ -85,7 +86,7 @@ class ProductResult extends StatelessWidget {
                         },
                         child: Text('STATUS'),
                         style: TextButton.styleFrom(
-                            foregroundColor: Colors.white,
+                            foregroundColor: kLightColor,
                             textStyle: GoogleFonts.urbanist(
                                 fontWeight: FontWeight.bold, fontSize: 10)),
                       ),
@@ -94,7 +95,7 @@ class ProductResult extends StatelessWidget {
                       height: 30,
                       //padding: EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: kRedTextColor,
                           borderRadius: BorderRadius.circular(25)),
                       child: TextButton(
                         onPressed: () {
@@ -102,7 +103,7 @@ class ProductResult extends StatelessWidget {
                         },
                         child: Text('REPORT'),
                         style: TextButton.styleFrom(
-                            foregroundColor: Colors.white,
+                            foregroundColor: kLightColor,
                             textStyle: GoogleFonts.urbanist(
                                 fontWeight: FontWeight.bold, fontSize: 10)),
                       ),
@@ -144,7 +145,7 @@ class ProductResult extends StatelessWidget {
                           ),
                           Text('#901038',
                               style: GoogleFonts.urbanist(
-                                color: Colors.grey,
+                                color: kTextLightColor,
                                 fontSize: 14,
                               )),
                         ],
@@ -154,7 +155,7 @@ class ProductResult extends StatelessWidget {
                       height: 30,
                       //padding: EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
-                          color: Colors.black,
+                          color: kDarkColor,
                           borderRadius: BorderRadius.circular(25)),
                       child: TextButton(
                         onPressed: () {
@@ -162,7 +163,7 @@ class ProductResult extends StatelessWidget {
                         },
                         child: Text('STATUS'),
                         style: TextButton.styleFrom(
-                            foregroundColor: Colors.white,
+                            foregroundColor: kLightColor,
                             textStyle: GoogleFonts.urbanist(
                                 fontWeight: FontWeight.bold, fontSize: 10)),
                       ),

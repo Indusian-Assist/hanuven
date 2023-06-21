@@ -18,7 +18,7 @@ class _RetailerLoginState extends State<RetailerLogin> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.white,
+        backgroundColor: kBackgroundColor,
         body: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
@@ -114,14 +114,14 @@ class _RetailerLoginState extends State<RetailerLogin> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: Colors.black,
+                            color: kDarkColor,
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Icon(
                               Icons.arrow_right_alt,
                               size: 35,
-                              color: Colors.white,
+                              color: kLightColor,
                             ),
                           ),
                         ),

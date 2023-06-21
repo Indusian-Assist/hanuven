@@ -40,18 +40,18 @@ class Body extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(width: 1),
                   borderRadius: BorderRadius.circular(50),
-                  color: Colors.black,
+                  color: kDarkColor,
                   boxShadow: const [
                     BoxShadow(
                       blurStyle: BlurStyle.outer,
                       blurRadius: 10,
-                      color: Colors.grey,
+                      color: kShadowColor,
                     )
                   ],
                 ),
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
+                      backgroundColor: kDarkColor,
                       foregroundColor: kLightColor,
                     ),
                     onPressed: () {
@@ -94,7 +94,7 @@ class Body extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: OpenContainer(
                     middleColor: Colors.orange,
-                    openColor: Colors.transparent,
+                    openColor: kTransparentColor,
                     closedShape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(30.0),
@@ -116,6 +116,8 @@ class Body extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: OpenContainer(
+                    middleColor: Colors.orange,
+                    openColor: kTransparentColor,
                     closedShape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(30.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hanuven/utils/constants/color.dart';
 class CustomNumberField extends StatelessWidget {
   const CustomNumberField({
     super.key,
@@ -10,7 +11,7 @@ class CustomNumberField extends StatelessWidget {
         height: 55,
         width: 250,
         decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.grey),
+            border: Border.all(width: 1, color: kGreyColor),
             borderRadius: BorderRadius.circular(10)),
         child: Row(
           children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 
 class Retailer extends StatelessWidget {
@@ -46,7 +47,7 @@ class Retailer extends StatelessWidget {
                     //error
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: kBackgroundColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: IconButton(
@@ -171,7 +172,7 @@ class Retailer extends StatelessWidget {
                         width: 75,
                         padding: EdgeInsets.all(5.0),
                         decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: Colors.grey),
+                          border: Border.all(width: 1, color: kGreyColor),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Column(
@@ -180,12 +181,12 @@ class Retailer extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.edit,
-                              color: Colors.grey,
+                              color: kGreyColor,
                             ),
                             Text(
                               'Product1',
                               style: GoogleFonts.urbanist(
-                                color: Colors.grey,
+                                color: kTextLightColor,
                               ),
                             ),
                           ],
@@ -212,14 +213,14 @@ class Retailer extends StatelessWidget {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: Color.fromARGB(255, 80, 151, 218),
+                          color: kButtonColor,
                         ),
                         child: Text(
                           'ORDER DETAILS',
                           style: GoogleFonts.urbanist(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: kLightColor,
                           ),
                         ),
                       ),
