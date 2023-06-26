@@ -3,6 +3,7 @@ import 'package:hanuven/Screens/GuidScreen/welcome_screen.dart';
 import 'package:hanuven/Screens/Home/home_screen.dart';
 import 'package:hanuven/Screens/ProfileScreen/Components/edit_profile.dart';
 import 'package:hanuven/Screens/ProfileScreen/profile_screen.dart';
+import 'package:hanuven/Screens/Shopping/thankyou.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
 import 'package:hanuven/Screens/loginScreen/otp_screen.dart';
 import '../Screens/Scanner/components/qr_scan.dart';
@@ -64,10 +65,15 @@ onGenerateRoute(RouteSettings settings) {
       return CustomPageRoute(
           child: EditProfile(),
           settings: settings,
-          direction: AxisDirection.up);
+          direction: AxisDirection.left);
     case '/profile':
       return CustomPageRoute(
           child: ProfileScreen(),
+          settings: settings,
+          direction: AxisDirection.left);
+    case '/thankyou':
+      return CustomPageRoute(
+          child: Thankyou(),
           settings: settings,
           direction: AxisDirection.left);
   }

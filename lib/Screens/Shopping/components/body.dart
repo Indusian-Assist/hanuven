@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 
 class Body extends StatelessWidget {
@@ -42,12 +43,12 @@ class Body extends StatelessWidget {
                   //error
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: kBackgroundColor,
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: IconButton(
                       onPressed: () {
-                        //Todo: Srijan perform an action
+                        Navigator.pushReplacementNamed(context, '/home');
                       },
                       icon: Image.asset(
                         kMainIconUrl,
@@ -76,7 +77,7 @@ class Body extends StatelessWidget {
                   style: GoogleFonts.urbanist(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(203, 44, 61, 1)),
+                      color: kRedTextColor),
                 ),
               ),
               Row(
@@ -91,7 +92,7 @@ class Body extends StatelessWidget {
                         Text('By Tanishk'),
                         Text('01 May, 2023, 16:39 PM',
                             style: GoogleFonts.urbanist(
-                              color: Colors.grey,
+                              color: kTextLightColor,
                             )),
                       ],
                     ),
@@ -100,16 +101,16 @@ class Body extends StatelessWidget {
                     height: 40,
                     //padding: EdgeInsets.all(5.0),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: kButtonColor,
                       borderRadius: BorderRadius.circular(25)
                     ),
                     child: TextButton(
                       onPressed: () {
-                        //Todo: Srijan Perform an action
+                        Navigator.pushReplacementNamed(context, '/home');
                       },
                       child: Text('CONTINUE SHOPPING'),
                      style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
+                        foregroundColor: kLightColor,
                         textStyle: GoogleFonts.urbanist(
                             fontWeight: FontWeight.bold, fontSize: 12)),
                     ),

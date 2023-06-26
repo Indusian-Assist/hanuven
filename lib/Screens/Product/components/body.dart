@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 import '../../../utils/constants/images_icons.dart';
 
 class Body extends StatelessWidget {
@@ -57,7 +58,7 @@ class Body extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        //Todo: Srijan perform an action
+                        Navigator.pushReplacementNamed(context, '/home');
                       },
                       icon: Image.asset(
                         kMainIconUrl,
@@ -84,17 +85,16 @@ class Body extends StatelessWidget {
                   ),
                   Container(
                     height: 30,
-                    //padding: EdgeInsets.all(5.0),
                     decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: kDarkColor,
                         borderRadius: BorderRadius.circular(25)),
                     child: TextButton(
                       onPressed: () {
-                        //Todo: Srijan Perform an action
+                        Navigator.pushNamed(context, '/thankyou');
                       },
                       child: Text('BUY NOW'),
                       style: TextButton.styleFrom(
-                          foregroundColor: Colors.white,
+                          foregroundColor: kLightColor,
                           textStyle: GoogleFonts.urbanist(
                               fontWeight: FontWeight.bold, fontSize: 10)),
                     ),
@@ -132,7 +132,7 @@ class Body extends StatelessWidget {
                       style: GoogleFonts.urbanist(
                         fontStyle: FontStyle.italic,
                         fontSize: 15,
-                        color: Colors.black,
+                        color: kDarkColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

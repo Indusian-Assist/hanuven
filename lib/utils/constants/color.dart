@@ -38,29 +38,38 @@ const Color kSecondaryColor = Color(0xFFBDBDBD);
 const Color kSecondaryLightColor = Color(0xFFE0E0E0);
 
 // This is the background color of the application
-const Color kBackgroundColor = Color(0xFFFAFAFA);
+const Color kBackgroundColor = Color(0xFFFFFFFF);  
 
 // This is the text color of the application
-const Color kTextColor = Color(0xFF000000);
+const Color kTextColor = Color(0xFF000000);  
 const Color kTextLightColor = Color(0xFF757575);
 
 // This is the shadow color of the application
-const Color kShadowColor = Color(0xFFE6E6E6);
+const Color kShadowColor = Color(0xFFE6E6E6);  
+
+// This is the button color of the application
+const Color kButtonColor = Color(0xFF5097DA);   
+
+// This is the transparent color of the application
+const Color kTransparentColor = Color(0x00000000);  
 
 // This is the info color of the application
 const Color kInfoColor = Color(0xFF2196F3);
 
-// This is the dark color of the application
-const Color kDarkColor = Color(0xFF212121);
+// This is the dark color of the application for text and buttons
+const Color kDarkColor = Color(0xFF000000);   
 
-// This is the light color of the application
-const Color kLightColor = Color(0xFFFFFFFF);
+// This is the light color of the application for text 
+const Color kLightColor = Color(0xFFFFFFFF);   
 
-// This is the grey color of the application
-const Color kGreyColor = Color(0xFF9E9E9E);
+// This is the grey color of the application for  text
+const Color kGreyColor = Color(0xFF9E9E9E);   
 
 // This is the dark grey color of the application
 const Color kDarkGreyColor = Color(0xFF424242);
+
+// This is red color for text in the application for text and button 
+const Color kRedTextColor = Color(0xFFCB2C3D);   
 
 // This is the success, error & warning color of the application
 // success: green

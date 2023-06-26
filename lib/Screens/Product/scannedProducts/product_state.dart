@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hanuven/utils/constants/color.dart';
 
 import '../../../utils/constants/images_icons.dart';
 
@@ -8,7 +9,7 @@ class ProductState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size  = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
@@ -49,7 +50,7 @@ class ProductState extends StatelessWidget {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          //Todo: Srijan perform an action
+                          Navigator.pushReplacementNamed(context, '/home');
                         },
                         icon: Image.asset(
                           kMainIconUrl,
@@ -80,7 +81,7 @@ class ProductState extends StatelessWidget {
                           height: 30,
                           //padding: EdgeInsets.all(5.0),
                           decoration: BoxDecoration(
-                              color: Colors.black,
+                              color: kDarkColor,
                               borderRadius: BorderRadius.circular(25)),
                           child: TextButton(
                             onPressed: () {
@@ -88,17 +89,19 @@ class ProductState extends StatelessWidget {
                             },
                             child: Text('ACTIVATE'),
                             style: TextButton.styleFrom(
-                                foregroundColor: Colors.white,
+                                foregroundColor: kLightColor,
                                 textStyle: GoogleFonts.urbanist(
                                     fontWeight: FontWeight.bold, fontSize: 10)),
                           ),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Container(
                           height: 30,
                           //padding: EdgeInsets.all(5.0),
                           decoration: BoxDecoration(
-                              color: Colors.blue,
+                              color: kButtonColor,
                               borderRadius: BorderRadius.circular(25)),
                           child: TextButton(
                             onPressed: () {
@@ -106,7 +109,7 @@ class ProductState extends StatelessWidget {
                             },
                             child: Text('RETURN'),
                             style: TextButton.styleFrom(
-                                foregroundColor: Colors.white,
+                                foregroundColor: kLightColor,
                                 textStyle: GoogleFonts.urbanist(
                                     fontWeight: FontWeight.bold, fontSize: 10)),
                           ),
@@ -146,7 +149,7 @@ class ProductState extends StatelessWidget {
                         style: GoogleFonts.urbanist(
                           fontStyle: FontStyle.italic,
                           fontSize: 15,
-                          color: Colors.black,
+                          color: kDarkColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
