@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hanuven/utils/Auth/authentication_repository.dart';
+import 'package:hanuven/api/controller/login.dart';
+// import 'package:hanuven/utils/Auth/authentication_repository.dart';
 
 import '../../../utils/constants/color.dart';
 import '../../../utils/constants/images_icons.dart';
@@ -19,7 +20,8 @@ class Components {
         child: IconButton(
           icon: const Icon(Icons.logout),
           onPressed: () {
-            AuthenticationRepository.instance.signOut(context);
+            // AuthenticationRepository.instance.signOut(context);
+            logout(context);
           },
         ),
       ),

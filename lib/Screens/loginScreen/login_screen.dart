@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hanuven/utils/Auth/authentication_repository.dart';
+import 'package:hanuven/api/controller/login.dart';
+// import 'package:hanuven/utils/Auth/authentication_repository.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
+import 'otp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -146,8 +148,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     GestureDetector(
                       onTap: () async {
                         formKey.currentState?.save();
-                       AuthenticationRepository.instance.phoneAuthentication(
-                            context, number.phoneNumber.toString());
+                        var number = phoneNo.split('+91')[1];
+                        var val = await login(number);
+                        debugPrint(val);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => OTPScreen(
+                              number: number,
+                            ),
+                          ),
+                        );
+                        //  AuthenticationRepository.instance.phoneAuthentication(
+                        //       context, number.phoneNumber.toString());
                       },
                       child: Container(
                         decoration: BoxDecoration(

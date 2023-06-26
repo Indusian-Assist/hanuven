@@ -34,17 +34,17 @@ onGenerateRoute(RouteSettings settings) {
       return CustomPageRoute(
           child: const WelcomeScreen(),
           settings: settings,
-          direction: AxisDirection.right);
+          direction: AxisDirection.left);
     case '/login':
       return CustomPageRoute(
           child: const LoginScreen(),
           settings: settings,
           direction: AxisDirection.left);
-    case '/otp':
-      return CustomPageRoute(
-          child: const OTPScreen(),
-          settings: settings,
-          direction: AxisDirection.left);
+    // case '/otp':
+    //   return CustomPageRoute(
+    //       child: const OTPScreen(),
+    //       settings: settings,
+    //       direction: AxisDirection.left);
     case '/ScanQR':
       return CustomPageRoute(
           child: const QRScanner(),
