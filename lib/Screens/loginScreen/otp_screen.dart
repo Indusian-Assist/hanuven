@@ -1,13 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hanuven/utils/Auth/authentication_repository.dart';
+
 import 'package:hanuven/utils/constants/color.dart';
+// import 'package:hanuven/utils/Auth/authentication_repository.dart';
+
 import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:otp_timer_button/otp_timer_button.dart';
 
+import '../../api/controller/login.dart';
+
 class OTPScreen extends StatefulWidget {
-  const OTPScreen({super.key});
+  const OTPScreen({super.key, required this.number});
+  final String number;
 
   @override
   State<OTPScreen> createState() => _OTPScreenState();
@@ -91,7 +96,7 @@ class _OTPScreenState extends State<OTPScreen> {
                           onChanged: (value) {
                             if (value.length == 1) {
                               code = code + value;
-                              AuthenticationRepository.instance.verifyOTP(context, code);
+                              // AuthenticationRepository.instance.verifyOTP(context, code);
                             }
                           },
                         ),
@@ -119,7 +124,12 @@ class _OTPScreenState extends State<OTPScreen> {
                 GestureDetector(
                   onTap: () async {
                     formKey.currentState?.save();
-                    AuthenticationRepository.instance.verifyOTP(context, code);
+                    debugPrint(code);
+                    var response = await verifyOTP(widget.number, code);
+                    debugPrint(response);
+                    
+                    Navigator.pushNamed(context, '/home');
+                    // AuthenticationRepository.instance.verifyOTP(context, code);
                   },
                   child: Container(
                     decoration: BoxDecoration(
