@@ -35,7 +35,7 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      padding: EdgeInsets.symmetric(horizontal: 30),
                       alignment: Alignment.bottomRight,
                       height: size.height / 4,
                       child: Container(
@@ -57,7 +57,7 @@ class _EditProfileState extends State<EditProfile> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

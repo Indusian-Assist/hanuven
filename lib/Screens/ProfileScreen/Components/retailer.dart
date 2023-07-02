@@ -24,7 +24,7 @@ class Retailer extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
