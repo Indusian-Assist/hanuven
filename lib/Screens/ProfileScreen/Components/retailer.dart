@@ -23,211 +23,213 @@ class Retailer extends StatelessWidget {
                       image: kProfileBgImage, fit: BoxFit.cover)),
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_back_ios_new),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ),
-                    //error
-                    Container(
-                      decoration: BoxDecoration(
-                        color: kBackgroundColor,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/home');
-                        },
-                        icon: Image.asset(
-                          kMainIconUrl,
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 90,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 2.0, horizontal: size.width / 12 + 2),
-                      padding: EdgeInsets.all(2),
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          image: DecorationImage(
-                              image: kProfileImage, fit: BoxFit.cover)),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Tanishk Sahni',
-                                style: GoogleFonts.urbanist(
-                                    fontSize: 25, fontWeight: FontWeight.bold),
-                              ),
-                              IconButton(
-                                padding: EdgeInsets.all(0.0),
-                                icon: Icon(Icons.edit_document),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/editprofile');
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 3.0),
-                          padding: EdgeInsets.all(5.0),
-                          alignment: Alignment.center,
-                          width: 100,
-                          child: Text(
-                            'RETAILER',
-                            style: GoogleFonts.urbanist(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
-                              color: Colors.white,
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 3.0),
-                      padding: EdgeInsets.all(5.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.pin_drop),
-                          Text('Delhi, India'),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 30, bottom: 20),
-                  child: Text(
-                    'Lorem Ipsum',
-                    style: GoogleFonts.urbanist(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-                  style: GoogleFonts.urbanist(
-                    fontSize: 12,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
-                  child: Text(
-                    'Products Activated',
-                    style: GoogleFonts.urbanist(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+          SafeArea(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        height: 75,
-                        width: 75,
-                        padding: EdgeInsets.all(5.0),
+                        margin: const EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: kGreyColor),
-                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(25),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.edit,
-                              color: kGreyColor,
+                        child: IconButton(
+                          icon: const Icon(Icons.arrow_back_ios_new),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                      //error
+                      Container(
+                        decoration: BoxDecoration(
+                          color: kBackgroundColor,
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, '/home');
+                          },
+                          icon: Image.asset(
+                            kMainIconUrl,
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                            vertical: 2.0, horizontal: size.width / 12 + 2),
+                        padding: EdgeInsets.all(2),
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            image: DecorationImage(
+                                image: kProfileImage, fit: BoxFit.cover)),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            height: 50,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Tanishk Sahni',
+                                  style: GoogleFonts.urbanist(
+                                      fontSize: 25, fontWeight: FontWeight.bold),
+                                ),
+                                IconButton(
+                                  padding: EdgeInsets.all(0.0),
+                                  icon: Icon(Icons.edit_document),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/editprofile');
+                                  },
+                                ),
+                              ],
                             ),
-                            Text(
-                              'Product1',
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 3.0),
+                            padding: EdgeInsets.all(5.0),
+                            alignment: Alignment.center,
+                            width: 100,
+                            child: Text(
+                              'RETAILER',
                               style: GoogleFonts.urbanist(
-                                color: kTextLightColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                color: Colors.white,
                               ),
                             ),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 3.0),
+                        padding: EdgeInsets.all(5.0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.pin_drop),
+                            Text('Delhi, India'),
                           ],
                         ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        //Todo:
-                      },
-                      child: Container(
-                        height: 50,
-                        width: 280,
-                        margin: EdgeInsets.symmetric(vertical: 12),
-                        padding: EdgeInsets.symmetric(vertical: 5.0),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: kButtonColor,
+                  Padding(
+                    padding: EdgeInsets.only(top: 30, bottom: 20),
+                    child: Text(
+                      'Lorem Ipsum',
+                      style: GoogleFonts.urbanist(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                    style: GoogleFonts.urbanist(
+                      fontSize: 12,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Text(
+                      'Products Activated',
+                      style: GoogleFonts.urbanist(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 75,
+                          width: 75,
+                          padding: EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(width: 1, color: kGreyColor),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.edit,
+                                color: kGreyColor,
+                              ),
+                              Text(
+                                'Product1',
+                                style: GoogleFonts.urbanist(
+                                  color: kTextLightColor,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        child: Text(
-                          'ORDER DETAILS',
-                          style: GoogleFonts.urbanist(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: kLightColor,
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          //Todo:
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 280,
+                          margin: EdgeInsets.symmetric(vertical: 12),
+                          padding: EdgeInsets.symmetric(vertical: 5.0),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: kButtonColor,
+                          ),
+                          child: Text(
+                            'ORDER DETAILS',
+                            style: GoogleFonts.urbanist(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: kLightColor,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

@@ -17,48 +17,48 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Stack(
-            children: [
-              Container(
-                child: Stack(
-                  children: [
-                    ClipPath(
-                      clipper: CustomClipPath(),
-                      child: Container(
-                        height: size.height / 4,
-                        width: double.maxFinite,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: kProfileBgImage, fit: BoxFit.cover)),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 30),
-                      alignment: Alignment.bottomRight,
+    return Scaffold(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Stack(
+          children: [
+            Container(
+              child: Stack(
+                children: [
+                  ClipPath(
+                    clipper: CustomClipPath(),
+                    child: Container(
                       height: size.height / 4,
-                      child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 5.0),
-                        decoration: BoxDecoration(
-                          color: kBackgroundColor.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: IconButton(
-                          onPressed: () {
-                            //Todo: Perform an action to edit background image
-                          },
-                          icon: Icon(Icons.image),
-                          color: kDarkColor,
-                        ),
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: kProfileBgImage, fit: BoxFit.cover)),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    alignment: Alignment.bottomRight,
+                    height: size.height / 4,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 5.0),
+                      decoration: BoxDecoration(
+                        color: kBackgroundColor.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          //Todo: Perform an action to edit background image
+                        },
+                        icon: Icon(Icons.image),
+                        color: kDarkColor,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Container(
+            ),
+            SafeArea(
+              child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +99,7 @@ class _EditProfileState extends State<EditProfile> {
                       ],
                     ),
                     SizedBox(
-                      height: 90,
+                      height: 50,
                     ),
                     Container(
                       child: Row(
@@ -240,8 +240,8 @@ class _EditProfileState extends State<EditProfile> {
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
