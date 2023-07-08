@@ -11,10 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Future<dynamic> products() async {
-  //   return await BaseClient().get('https://hanuven.vercel.app', '/api/product');
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

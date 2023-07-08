@@ -86,6 +86,7 @@ class Body extends StatelessWidget {
                 ),
               ),
             ),
+
             // Products
             ProductsSection(containerTransitionType: _containerTransitionType)
           ],
