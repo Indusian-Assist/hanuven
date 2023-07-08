@@ -1,11 +1,11 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hanuven/Screens/Product/product.dart';
+import 'package:hanuven/Screens/Home/components/products.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:lottie/lottie.dart';
 import '../../../utils/constants/images_icons.dart';
-import 'components.dart';
+
 
 class Body extends StatelessWidget {
   const Body({
@@ -87,60 +87,11 @@ class Body extends StatelessWidget {
               ),
             ),
             // Products
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OpenContainer(
-                    middleColor: Colors.orange,
-                    openColor: kTransparentColor,
-                    closedShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(30.0),
-                      ),
-                    ),
-                    transitionType: _containerTransitionType,
-                    transitionDuration: Duration(milliseconds: 500),
-                    closedBuilder: (context, _) => Components.customProductCard(
-                        kProduct1Url, 'Product 1', 'INR 300'),
-                    openBuilder: (context, _) => ProductScreen(
-                      pimage: kProduct1Url,
-                      title: 'Product 1',
-                      desc:
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                      price: '300',
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OpenContainer(
-                    middleColor: Colors.orange,
-                    openColor: kTransparentColor,
-                    closedShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(30.0),
-                      ),
-                    ),
-                    transitionType: _containerTransitionType,
-                    transitionDuration: Duration(milliseconds: 500),
-                    closedBuilder: (context, _) => Components.customProductCard(
-                        kProduct2Url, 'Product 2', 'INR 500'),
-                    openBuilder: (context, _) => ProductScreen(
-                      pimage: kProduct2Url,
-                      title: 'Product 2',
-                      desc:
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                      price: '500',
-                    ),
-                  ),
-                ),
-              ],
-            )
+            ProductsSection(containerTransitionType: _containerTransitionType)
           ],
         ),
       ),
     );
   }
 }
+

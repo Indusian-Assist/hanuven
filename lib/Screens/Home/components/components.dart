@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hanuven/api/controller/login.dart';
+import 'package:hanuven/api/controller/login_logic.dart';
 // import 'package:hanuven/utils/Auth/authentication_repository.dart';
 
 import '../../../utils/constants/color.dart';
@@ -85,7 +85,8 @@ class Components {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image(
-                    image: AssetImage(imageUrl),
+                    // image: AssetImage(imageUrl),
+                    image: NetworkImage(imageUrl),
                     fit: BoxFit.cover,
                   ),
                 ),

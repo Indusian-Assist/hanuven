@@ -5,7 +5,7 @@ import 'package:hanuven/Screens/ProfileScreen/Components/edit_profile.dart';
 import 'package:hanuven/Screens/ProfileScreen/profile_screen.dart';
 import 'package:hanuven/Screens/Shopping/thankyou.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
-import 'package:hanuven/Screens/loginScreen/otp_screen.dart';
+import 'package:hanuven/Screens/test.dart';
 import '../Screens/Scanner/components/qr_scan.dart';
 import '../Screens/Scanner/components/scan_result.dart';
 import '../utils/Components/animations/success.dart';
@@ -23,6 +23,9 @@ onGenerateInitialRoutes(String initialRoute) {
 
 onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case '/test':
+      return MaterialPageRoute(
+          builder: (context) => const TestScreen(), settings: settings);
     case '/splash':
       return MaterialPageRoute(
           builder: (context) => const SplashScreen(), settings: settings);
@@ -41,11 +44,6 @@ onGenerateRoute(RouteSettings settings) {
           child: const LoginScreen(),
           settings: settings,
           direction: AxisDirection.left);
-    // case '/otp':
-    //   return CustomPageRoute(
-    //       child: const OTPScreen(),
-    //       settings: settings,
-    //       direction: AxisDirection.left);
     case '/ScanQR':
       return CustomPageRoute(
           child: const QRScanner(),

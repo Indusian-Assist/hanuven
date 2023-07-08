@@ -53,5 +53,10 @@ class DialogManager {
   static void hideLoading() {
     if (Get.isDialogOpen ?? false) Get.back();
   }
+  
+
+
   // show snackbar
+
+
 }

@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 import '../../api/services/app_exceptions.dart';
+import '../Manager/session_token_manager.dart';
+import '../models/products.dart';
 
 class BaseClient {
   // ignore: constant_identifier_names
@@ -14,9 +16,12 @@ class BaseClient {
   Future<dynamic> get(String baseUrl, String api) async {
     var uri = Uri.parse(baseUrl + api);
     try {
-      var response = await http
-          .get(uri)
-          .timeout(const Duration(seconds: TIME_OUT_DURATION));
+      var cookies = await generateCookieString();
+      var response = await http.get(uri, headers: {
+        'cookie': cookies.toString()
+      }).timeout(const Duration(seconds: TIME_OUT_DURATION));
+      // save cookies to local storage (update csrfToken)
+      await saveCookiesToLocalStorage(response.headers['set-cookie']!);
       return _processResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet connection', uri.toString());
@@ -46,8 +51,9 @@ class BaseClient {
   dynamic _processResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:
-        var responseJson = utf8.decode(response.bodyBytes);
-        return responseJson;
+        // var responseJson = utf8.decode(response.bodyBytes);
+        final products = productsFromJson(response.body);
+        return products;
       case 201:
         var responseJson = utf8.decode(response.bodyBytes);
         return responseJson;

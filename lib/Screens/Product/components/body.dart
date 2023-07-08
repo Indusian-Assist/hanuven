@@ -23,8 +23,8 @@ class Body extends StatelessWidget {
       children: [
         Container(
           height: size.height * 0.5,
-          child: Image.asset(
-            pimage,
+          child: Image(
+            image: NetworkImage(pimage),
             fit: BoxFit.fill,
           ),
         ),

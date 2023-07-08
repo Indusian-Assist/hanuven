@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hanuven/api/controller/login.dart';
 // import 'package:hanuven/utils/Auth/authentication_repository.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
+
+import '../../api/Manager/session_token_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,9 +21,6 @@ class _SplashScreenState extends State<SplashScreen> {
       await checkUser() == true
         ? Navigator.pushReplacementNamed(context, '/home')
         : Navigator.pushReplacementNamed(context, '/guid');
-      // AuthenticationRepository.instance.firebaseUser.value == null
-      //     ? Navigator.pushReplacementNamed(context, '/guid')
-      //     : Navigator.pushReplacementNamed(context, '/home');
     });
     super.initState();
   }

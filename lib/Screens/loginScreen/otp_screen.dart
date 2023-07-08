@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:hanuven/utils/constants/color.dart';
-// import 'package:hanuven/utils/Auth/authentication_repository.dart';
 
 import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:otp_timer_button/otp_timer_button.dart';
 
-import '../../api/controller/login.dart';
+import '../../api/controller/login_logic.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key, required this.number});
@@ -127,8 +126,20 @@ class _OTPScreenState extends State<OTPScreen> {
                     debugPrint(code);
                     var response = await verifyOTP(widget.number, code);
                     debugPrint(response);
-                    
-                    Navigator.pushNamed(context, '/home');
+                    if (response == '{"url":"https://hanuven.vercel.app"}') {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Successfully Logged In"),
+                        ),
+                      );
+                      Navigator.pushReplacementNamed(context, '/home');
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Invalid OTP'),
+                        ),
+                      );
+                    }
                     // AuthenticationRepository.instance.verifyOTP(context, code);
                   },
                   child: Container(

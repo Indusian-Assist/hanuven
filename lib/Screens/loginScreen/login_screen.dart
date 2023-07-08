@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hanuven/api/controller/login.dart';
-// import 'package:hanuven/utils/Auth/authentication_repository.dart';
+import 'package:hanuven/api/controller/login_logic.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
 import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
+import '../../api/Manager/session_token_manager.dart';
 import 'otp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -73,10 +73,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               padding: EdgeInsets.symmetric(horizontal: 20),
                               child: InternationalPhoneNumberInput(
                                 onInputChanged: (PhoneNumber number) {
-                                  print(number.phoneNumber.toString());
+                                  // print(number.phoneNumber.toString());
                                 },
                                 onInputValidated: (bool value) {
-                                  print(value);
+                                  // print(value);
                                 },
                                 selectorConfig: SelectorConfig(
                                   selectorType:
@@ -108,7 +108,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    // CustomNumberField(),
                   ],
                 ),
               ),
@@ -149,8 +148,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () async {
                         formKey.currentState?.save();
                         var number = phoneNo.split('+91')[1];
-                        var val = await login(number);
-                        debugPrint(val);
+                        var error = await checkErrorMessage(await login(number));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(error),
+                        ),
+                      );
                         Navigator.push(
                           context,
                           MaterialPageRoute(
