@@ -8,12 +8,12 @@
  */
 
 
-
 // To parse this JSON data, do
 //
 //     final products = productsFromJson(jsonString);
 
 import 'dart:convert';
+import '../services/base_client.dart';
 
 Products productsFromJson(String str) => Products.fromJson(json.decode(str));
 
@@ -71,3 +71,7 @@ class Datum {
         "price": price,
     };
 }
+
+  Future<dynamic> fetchProducts() async {
+    return productsFromJson(await BaseClient().get('https://hanuven.vercel.app', '/api/product'));
+  }

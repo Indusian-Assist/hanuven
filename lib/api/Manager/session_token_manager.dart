@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import '../models/user.dart';
 
 // Function 1: Text to JSON Cookies Converter return auth token
 Map<String, String> textToJsonCookies(String cookiesText) {
@@ -101,6 +102,8 @@ Future<bool> checkUser() async {
   var pref = await SharedPreferences.getInstance();
   debugPrint(
       "Auth Token: ${pref.getString('authToken')} \nCsrf Token: ${pref.getString('csrfToken')}");
+  debugPrint(response.body); // print name of the user
+  // debugPrint(fetchUserData);
   if (response.body.contains('phone')) {
     return true;
   } else {

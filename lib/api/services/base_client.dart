@@ -49,27 +49,25 @@ class BaseClient {
   }
 
   dynamic _processResponse(http.Response response) {
+    final responseBody = response.body;
     switch (response.statusCode) {
       case 200:
-        // var responseJson = utf8.decode(response.bodyBytes);
-        final products = productsFromJson(response.body);
-        return products;
+        return responseBody;
       case 201:
-        var responseJson = utf8.decode(response.bodyBytes);
-        return responseJson;
+        return responseBody;
       case 400:
         throw BadRequestException(
-          utf8.decode(response.bodyBytes),
+          responseBody,
           response.request!.url.toString(),
         );
       case 401:
         throw BadRequestException(
-          utf8.decode(response.bodyBytes),
+          responseBody,
           response.request!.url.toString(),
         );
       case 403:
         throw UnauthorisedException(
-          utf8.decode(response.bodyBytes),
+          responseBody,
           response.request!.url.toString(),
         );
       case 404:
@@ -78,9 +76,10 @@ class BaseClient {
         throw Exception('Internal server error');
       default:
         throw FetchDataException(
-          "Error occured with code : ${response.statusCode}",
+          "Error occurred with code: ${response.statusCode}",
           response.request!.url.toString(),
         );
     }
   }
+
 }

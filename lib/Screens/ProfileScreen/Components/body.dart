@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:hanuven/utils/constants/images_icons.dart';
+import 'details.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -66,158 +67,10 @@ class Body extends StatelessWidget {
                 SizedBox(
                   height: 90,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.all(2.0),
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          image: DecorationImage(
-                              image: kProfileImage, fit: BoxFit.cover)),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      height: 50,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Tanishk Sahni',
-                            style: GoogleFonts.urbanist(
-                                fontSize: 25, fontWeight: FontWeight.bold),
-                          ),
-                          IconButton(
-                            padding: EdgeInsets.all(0.0),
-                            icon: Icon(Icons.edit_document),
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/editprofile');
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 3.0),
-                      padding: EdgeInsets.all(5.0),
-                      alignment: Alignment.center,
-                      width: 100,
-                      child: Text(
-                        'Primary',
-                        style: GoogleFonts.urbanist(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: kButtonColor,
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 229, 234, 239),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 3.0),
-                      padding: EdgeInsets.all(5.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.pin_drop),
-                          Text('Delhi, India'),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 30, bottom: 20),
-                  child: Text(
-                    'Lorem Ipsum',
-                    style: GoogleFonts.urbanist(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-                  style: GoogleFonts.urbanist(
-                    fontSize: 12,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
-                  child: Text(
-                    'Scanned Products',
-                    style: GoogleFonts.urbanist(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 75,
-                        width: 75,
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: kGreyColor),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.edit,
-                              color: kGreyColor,
-                            ),
-                            Text(
-                              'Product1',
-                              style: GoogleFonts.urbanist(
-                                color: kTextLightColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        //Todo: Srijan perform a action
-                      },
-                      child: Container(
-                        height: 50,
-                        width: 280,
-                        margin: EdgeInsets.symmetric(vertical: 20),
-                        padding: EdgeInsets.symmetric(vertical: 5.0),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: kButtonColor,
-                        ),
-                        child: Text(
-                          'ORDER DETAILS',
-                          style: GoogleFonts.urbanist(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: kLightColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+
+                // Profile Details
+                ProfileDetails(),
+
               ],
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-
-import '../../../api/services/base_client.dart';
+import '../../../api/models/products.dart';
 import '../../../utils/constants/color.dart';
 import '../../Product/product.dart';
 import 'components.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class ProductsSection extends StatefulWidget {
   const ProductsSection({
@@ -19,10 +19,10 @@ class ProductsSection extends StatefulWidget {
 }
 
 class _ProductsSectionState extends State<ProductsSection> {
-  Future<dynamic> fetchProducts() async {
-    return await BaseClient().get('https://hanuven.vercel.app', '/api/product');
-  }
-
+  final spinkit = SpinKitFadingCircle(
+    color: kButtonColor,
+    size: 50.0,
+  );
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<dynamic>(
@@ -87,7 +87,7 @@ class _ProductsSectionState extends State<ProductsSection> {
         } else if (snapshot.hasError) {
           return Text(snapshot.error.toString());
         }
-        return Center(child: CircularProgressIndicator());
+        return Center(child: spinkit);
       },
     );
   }
