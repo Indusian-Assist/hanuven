@@ -46,7 +46,6 @@ Future<(String, String)> generateCookieString() async {
   var authToken = prefs.getString('authToken');
 
   // Verify Weather the CsrfToken is stored Or Not
-
   var store = jsonToTextCookies({
     '__Host-next-auth.csrf-token': csrfToken,
     '__Secure-next-auth.session-token': authToken ?? '',
