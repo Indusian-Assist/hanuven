@@ -20,6 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: kBackgroundColor,
         appBar: Components.customPreferredSize(context),
-        body: Body());
+        body: const Body());
   }
 }

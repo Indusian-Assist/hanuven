@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
-import '../models/user.dart';
 
 // Function 1: Text to JSON Cookies Converter return auth token
 Map<String, String> textToJsonCookies(String cookiesText) {

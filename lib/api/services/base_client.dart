@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 
 import '../../api/services/app_exceptions.dart';
 import '../Manager/session_token_manager.dart';
-import '../models/products.dart';
 
 class BaseClient {
   // ignore: constant_identifier_names
