@@ -117,37 +117,40 @@ class _ProductsSectionState extends State<ProductsSection> {
                     ),
                   ),
                 ),
-                
               ],
             );
           } else if (snapshot.hasError) {
             return Text(snapshot.error.toString());
           }
-          return Center(child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 20.0),
-                child: SkeletonAvatar(
-                style: SkeletonAvatarStyle(
-                  width: size.width * 0.38,
-                  height: size.height * 0.28,
-                  borderRadius: BorderRadius.circular(10),
+          return Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 30.0, horizontal: 20.0),
+                  child: SkeletonAvatar(
+                    style: SkeletonAvatarStyle(
+                      width: size.width * 0.38,
+                      height: size.height * 0.28,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ),
-                          ),
-              ),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 20.0),
-                child: SkeletonAvatar(
-                style: SkeletonAvatarStyle(
-                  width: size.width * 0.38,
-                  height: size.height * 0.28,
-                  borderRadius: BorderRadius.circular(10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 30.0, horizontal: 20.0),
+                  child: SkeletonAvatar(
+                    style: SkeletonAvatarStyle(
+                      width: size.width * 0.38,
+                      height: size.height * 0.28,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ),
-                          ),
-              ),
-            ],
-          ),);
+              ],
+            ),
+          );
         },
       ),
     );

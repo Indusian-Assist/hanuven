@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,84 +26,82 @@ class _OTPScreenState extends State<OTPScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
         color: kBackgroundColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              child: Column(
-                children: [
-                  Image(
-                      image: AssetImage('assets/images/otpscreen.png'),
-                      height: 150,
-                      width: 150),
-                  Text(
-                    'Enter OTP \nto verify',
-                    style: kDefaultFontLogin,
-                    textAlign: TextAlign.center,
+            Column(
+              children: [
+                const Image(
+                    image: AssetImage('assets/images/otpscreen.png'),
+                    height: 150,
+                    width: 150),
+                Text(
+                  'Enter OTP \nto verify',
+                  style: kDefaultFontLogin,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Form(
+                    child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomOTPField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            code = code + value;
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                      ),
+                      CustomOTPField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            code = code + value;
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                      ),
+                      CustomOTPField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            code = code + value;
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                      ),
+                      CustomOTPField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            code = code + value;
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                      ),
+                      CustomOTPField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            code = code + value;
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                      ),
+                      CustomOTPField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            code = code + value;
+                            // AuthenticationRepository.instance.verifyOTP(context, code);
+                          }
+                        },
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Form(
-                      child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        CustomOTPField(
-                          onChanged: (value) {
-                            if (value.length == 1) {
-                              code = code + value;
-                              FocusScope.of(context).nextFocus();
-                            }
-                          },
-                        ),
-                        CustomOTPField(
-                          onChanged: (value) {
-                            if (value.length == 1) {
-                              code = code + value;
-                              FocusScope.of(context).nextFocus();
-                            }
-                          },
-                        ),
-                        CustomOTPField(
-                          onChanged: (value) {
-                            if (value.length == 1) {
-                              code = code + value;
-                              FocusScope.of(context).nextFocus();
-                            }
-                          },
-                        ),
-                        CustomOTPField(
-                          onChanged: (value) {
-                            if (value.length == 1) {
-                              code = code + value;
-                              FocusScope.of(context).nextFocus();
-                            }
-                          },
-                        ),
-                        CustomOTPField(
-                          onChanged: (value) {
-                            if (value.length == 1) {
-                              code = code + value;
-                              FocusScope.of(context).nextFocus();
-                            }
-                          },
-                        ),
-                        CustomOTPField(
-                          onChanged: (value) {
-                            if (value.length == 1) {
-                              code = code + value;
-                              // AuthenticationRepository.instance.verifyOTP(context, code);
-                            }
-                          },
-                        ),
-                      ],
-                    ),
-                  )),
-                ],
-              ),
+                )),
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -110,7 +110,7 @@ class _OTPScreenState extends State<OTPScreen> {
                   textColor: kDarkColor,
                   height: 60,
                   onPressed: () {},
-                  text: Text(
+                  text: const Text(
                     'Resend OTP',
                     style: TextStyle(fontSize: 20),
                   ),
@@ -126,27 +126,26 @@ class _OTPScreenState extends State<OTPScreen> {
                     debugPrint(response);
                     if (response == '{"url":"https://hanuven.vercel.app"}') {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text("Successfully Logged In"),
                         ),
                       );
                       Navigator.pushReplacementNamed(context, '/home');
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text('Invalid OTP'),
                         ),
                       );
                     }
-                    // AuthenticationRepository.instance.verifyOTP(context, code);
                   },
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: kDarkColor,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.arrow_right_alt,
                         size: 35,
@@ -200,14 +199,15 @@ class otpwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: kBackgroundColor,
-        child: Column(children: [
-          Image(
+      color: kBackgroundColor,
+      child: Column(
+        children: [
+          const Image(
             image: AssetImage('assets/images/otpscreen.png'),
             height: 150,
             width: 150,
           ),
-          Text(
+          const Text(
             'Enter Your \nOTP',
             maxLines: 2,
             style: TextStyle(
@@ -216,10 +216,10 @@ class otpwidget extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text(
+          const Text(
             'We have sent you an OTP on your \nregistered mobile number',
             maxLines: 2,
             style: TextStyle(
@@ -228,7 +228,7 @@ class otpwidget extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -243,14 +243,14 @@ class otpwidget extends StatelessWidget {
                     color: kGreyColor,
                   ),
                 ),
-                child: TextField(
+                child: const TextField(
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Container(
@@ -262,14 +262,14 @@ class otpwidget extends StatelessWidget {
                     color: kGreyColor,
                   ),
                 ),
-                child: TextField(
+                child: const TextField(
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Container(
@@ -281,14 +281,14 @@ class otpwidget extends StatelessWidget {
                     color: kGreyColor,
                   ),
                 ),
-                child: TextField(
+                child: const TextField(
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Container(
@@ -300,7 +300,7 @@ class otpwidget extends StatelessWidget {
                     color: kGreyColor,
                   ),
                 ),
-                child: TextField(
+                child: const TextField(
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -309,6 +309,8 @@ class otpwidget extends StatelessWidget {
               ),
             ],
           ),
-        ]));
+        ],
+      ),
+    );
   }
 }
