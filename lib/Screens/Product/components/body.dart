@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: size.height * 0.5,
           child: Image(
             image: NetworkImage(pimage),
@@ -29,8 +29,8 @@ class Body extends StatelessWidget {
           ),
         ),
         Container(
-          padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 20.0),
-          margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 20.0),
+          margin: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -76,7 +76,7 @@ class Body extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0),
+                    padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: Text(
                       title,
                       style: GoogleFonts.urbanist(
@@ -92,17 +92,17 @@ class Body extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, '/thankyou');
                       },
-                      child: Text('BUY NOW'),
                       style: TextButton.styleFrom(
                           foregroundColor: kLightColor,
                           textStyle: GoogleFonts.urbanist(
                               fontWeight: FontWeight.bold, fontSize: 10)),
+                      child: const Text('BUY NOW'),
                     ),
                   ),
                 ],
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Text(
                   'Description',
                   style: GoogleFonts.urbanist(
@@ -110,7 +110,7 @@ class Body extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 5.0),
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
                 child: Text(
                   desc,
                   style: GoogleFonts.urbanist(
@@ -119,7 +119,7 @@ class Body extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

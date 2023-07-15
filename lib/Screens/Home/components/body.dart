@@ -20,7 +20,7 @@ class Body extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 125,
               child: Lottie.asset(
                 'assets/animations/scanqr1.json',
@@ -31,11 +31,11 @@ class Body extends StatelessWidget {
             ),
             //scanner button
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 75, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 75, vertical: 10),
               child: Container(
                 height: 60,
                 width: 280,
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
                   border: Border.all(width: 1),
                   borderRadius: BorderRadius.circular(50),
@@ -56,7 +56,7 @@ class Body extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, '/ScanQR');
                     },
-                    icon: Icon(Icons.qr_code_scanner),
+                    icon: const Icon(Icons.qr_code_scanner),
                     label: Text(
                       'SCAN PRODUCTS',
                       style: GoogleFonts.urbanist(
@@ -64,7 +64,7 @@ class Body extends StatelessWidget {
                     )),
               ),
             ),
-            Container(
+            const SizedBox(
               height: 200,
               width: double.infinity,
               child: Image(
@@ -75,7 +75,7 @@ class Body extends StatelessWidget {
             ),
             // Header Text
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
               child: Text(
                 'Our Products',
                 style: GoogleFonts.urbanist(

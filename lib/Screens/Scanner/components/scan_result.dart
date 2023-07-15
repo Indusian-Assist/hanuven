@@ -47,11 +47,11 @@ class ResultScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // scanned QR code here
-              // QrImage(
-              //   data: code,
-              //   version: QrVersions.auto,
-              //   size: 200.0,
-              // ),
+              QrImageView(
+                data: code,
+                version: QrVersions.auto,
+                size: 200,
+              ),
               Text(
                 'Scanned Result',
                 style: TextStyle(

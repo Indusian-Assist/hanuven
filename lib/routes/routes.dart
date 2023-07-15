@@ -10,11 +10,12 @@ import '../Screens/Scanner/components/scan_result.dart';
 import '../utils/Components/animations/success.dart';
 import '../utils/Components/custom_page_route.dart';
 import '../Screens/Splash/splash_screen.dart';
+import '../Screens/test.dart';
 
 onGenerateInitialRoutes(String initialRoute) {
   return [
     MaterialPageRoute(
-      builder: (context) => const SplashScreen(),
+      builder: (context) => SplashScreen(),
       settings: const RouteSettings(name: '/splash'),
     ),
   ];
@@ -22,6 +23,11 @@ onGenerateInitialRoutes(String initialRoute) {
 
 onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case '/test':
+      return CustomPageRoute(
+          child: TestScreen(),
+          settings: settings,
+          direction: AxisDirection.left);
     case '/splash':
       return MaterialPageRoute(
           builder: (context) => const SplashScreen(), settings: settings);
