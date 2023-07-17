@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hanuven/api/Manager/dialog_manager.dart';
+import 'package:hanuven/api/services/base_client.dart';
 import 'package:hanuven/utils/constants/color.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -12,6 +16,24 @@ class ResultScreen extends StatelessWidget {
     required this.code,
     required this.closeScreen,
   });
+  qrVerify(context) async {
+    var response = await BaseClient().post('https://hanuven.vercel.app',
+        '/api/activation', {"qr": code.toString()}).catchError((err) {
+      debugPrint(err.toString());
+    });
+    var message = json.decode(response);
+    var status = message['verified'].toString();
+    debugPrint(message.toString());
+    if (status == "true") {
+      Navigator.pushReplacementNamed(context, '/success');
+      DialogManager.customSnackBar(
+          context, message['message'].toString(), Colors.green);
+    } else if(status == "false") {
+      DialogManager.customSnackBar(
+          context, message['message'].toString(), Colors.red);
+    }
+    // Navigator.pushReplacementNamed(context, '/success');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +48,12 @@ class ResultScreen extends StatelessWidget {
             // Navigator.pop(context);
             Navigator.pushReplacementNamed(context, '/home');
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: Colors.white,
           ),
         ),
-        title: Text(
+        title: const Text(
           'QR Scanner',
           style: TextStyle(
               color: Colors.black,
@@ -52,7 +74,7 @@ class ResultScreen extends StatelessWidget {
                 version: QrVersions.auto,
                 size: 200,
               ),
-              Text(
+              const Text(
                 'Scanned Result',
                 style: TextStyle(
                     color: Colors.black,
@@ -60,44 +82,46 @@ class ResultScreen extends StatelessWidget {
                     fontSize: 20,
                     letterSpacing: 1),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'This is the result of the scanned QR code',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 code,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 100,
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: kSuccessColor,
-                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 50, vertical: 10),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       letterSpacing: 1,
                     ),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     Clipboard.setData(ClipboardData(text: code));
-                    Navigator.pushReplacementNamed(context, '/success');
+                    await qrVerify(context);
+
                     // buildCustomDialog(context);
                   },
-                  child: Text(
-                    'Copy to clipboard',
+                  child: const Text(
+                    'Verify The QR Code',
                   ),
                 ),
               ),

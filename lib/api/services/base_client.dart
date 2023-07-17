@@ -36,9 +36,15 @@ class BaseClient {
     var uri = Uri.parse(baseUrl + api);
     var payload = json.encode(payloadObj);
     try {
+      var cookies = await generateCookieString();
       var response = await http
-          .post(uri, body: payload)
+          .post(uri, body: payload, headers: {
+            'Content-Type': 'application/json',
+            'cookie': cookies.toString()
+          })
           .timeout(const Duration(seconds: TIME_OUT_DURATION));
+      // save cookies to local storage (update csrfToken)
+      await saveCookiesToLocalStorage(response.headers['set-cookie']!);
       return _processResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet connection', uri.toString());
@@ -81,5 +87,4 @@ class BaseClient {
         );
     }
   }
-
 }

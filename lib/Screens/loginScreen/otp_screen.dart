@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hanuven/api/Manager/dialog_manager.dart';
+import 'package:hanuven/api/Manager/session_token_manager.dart';
 
 import 'package:hanuven/utils/constants/color.dart';
 
@@ -125,18 +127,17 @@ class _OTPScreenState extends State<OTPScreen> {
                     var response = await verifyOTP(widget.number, code);
                     debugPrint(response);
                     if (response == '{"url":"https://hanuven.vercel.app"}') {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("Successfully Logged In"),
-                        ),
-                      );
+                      DialogManager.customSnackBar(
+                          context,
+                          "Successfully Logged In",
+                          const Color.fromARGB(149, 2, 109, 54));
                       Navigator.pushReplacementNamed(context, '/home');
                     } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Invalid OTP'),
-                        ),
-                      );
+                      DialogManager.customSnackBar(
+                          context, await checkErrorMessage(response), Colors.red);
+                          setState(() {
+                            code = '';
+                          });
                     }
                   },
                   child: Container(
@@ -191,8 +192,8 @@ class CustomOTPField extends StatelessWidget {
   }
 }
 
-class otpwidget extends StatelessWidget {
-  const otpwidget({
+class OTPWidget extends StatelessWidget {
+  const OTPWidget({
     super.key,
   });
 

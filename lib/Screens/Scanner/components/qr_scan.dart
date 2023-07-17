@@ -43,44 +43,44 @@ class _QRScannerState extends State<QRScanner> with TickerProviderStateMixin {
 
   Animation<Alignment> bottomAnimation() {
     return _bottomAlignmentAnimation = TweenSequence<Alignment>(
-    [
-      TweenSequenceItem(
-        tween: AlignmentTween(
-          begin: Alignment.bottomCenter,
-          end: Alignment.bottomCenter,
+      [
+        TweenSequenceItem(
+          tween: AlignmentTween(
+            begin: Alignment.bottomCenter,
+            end: Alignment.bottomCenter,
+          ),
+          weight: 1,
         ),
-        weight: 1,
-      ),
-      TweenSequenceItem(
-        tween: AlignmentTween(
-          begin: Alignment.bottomCenter,
-          end: Alignment.bottomCenter,
+        TweenSequenceItem(
+          tween: AlignmentTween(
+            begin: Alignment.bottomCenter,
+            end: Alignment.bottomCenter,
+          ),
+          weight: 1,
         ),
-        weight: 1,
-      ),
-    ],
-  ).animate(_controller);
+      ],
+    ).animate(_controller);
   }
 
   Animation<Alignment> topAnimation() {
     return _topAlignmentAnimation = TweenSequence<Alignment>(
-    [
-      TweenSequenceItem(
-        tween: AlignmentTween(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+      [
+        TweenSequenceItem(
+          tween: AlignmentTween(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+          weight: 1,
         ),
-        weight: 1,
-      ),
-      TweenSequenceItem(
-        tween: AlignmentTween(
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
+        TweenSequenceItem(
+          tween: AlignmentTween(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+          ),
+          weight: 1,
         ),
-        weight: 1,
-      ),
-    ],
-  ).animate(_controller);
+      ],
+    ).animate(_controller);
   }
 
   void dispose() {
@@ -97,33 +97,31 @@ class _QRScannerState extends State<QRScanner> with TickerProviderStateMixin {
         centerTitle: true,
         backgroundColor: kScannerBg,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'QR Scanner',
           style: TextStyle(color: Colors.black),
         ),
       ),
       body: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Expanded(
-              child: Container(
-                child: Column(
-                  children: [
-                    Text(
-                      "Place the QR code inside the frame",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1,
-                      ),
+            const Expanded(
+              child: Column(
+                children: [
+                  Text(
+                    "Place the QR code inside the frame",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
                     ),
-                    SizedBox(height: 10),
-                    Text("Scanning will be started automatically."),
-                  ],
-                ),
+                  ),
+                  SizedBox(height: 10),
+                  Text("Scanning will be started automatically."),
+                ],
               ),
             ),
             Expanded(
@@ -159,14 +157,14 @@ class _QRScannerState extends State<QRScanner> with TickerProviderStateMixin {
                       controller: _controller,
                       topAlignmentAnimation: _topAlignmentAnimation,
                       bottomAlignmentAnimation: _bottomAlignmentAnimation),
-                  QRScannerOverlay(overlayColour: Colors.white),
+                  const QRScannerOverlay(overlayColour: Colors.white),
                 ],
               ),
             ),
             Expanded(
               child: Container(
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   "Developed by IndusianAssist",
                   style: TextStyle(
                     letterSpacing: 1,

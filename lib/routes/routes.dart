@@ -15,7 +15,7 @@ import '../Screens/test.dart';
 onGenerateInitialRoutes(String initialRoute) {
   return [
     MaterialPageRoute(
-      builder: (context) => SplashScreen(),
+      builder: (context) => const SplashScreen(),
       settings: const RouteSettings(name: '/splash'),
     ),
   ];
@@ -45,7 +45,7 @@ onGenerateRoute(RouteSettings settings) {
       return CustomPageRoute(
           child: const LoginScreen(),
           settings: settings,
-          direction: AxisDirection.left);
+          direction: AxisDirection.right);
     case '/ScanQR':
       return CustomPageRoute(
           child: const QRScanner(),
@@ -58,21 +58,21 @@ onGenerateRoute(RouteSettings settings) {
           direction: AxisDirection.up);
     case '/success':
       return CustomPageRoute(
-          child: SuccessScreen(),
+          child: const SuccessScreen(),
           settings: settings,
           direction: AxisDirection.up);
     case '/editprofile':
       return CustomPageRoute(
-          child: EditProfile(),
+          child: const EditProfile(),
           settings: settings,
           direction: AxisDirection.left);
     case '/profile':
       return CustomPageRoute(
-          child: ProfileScreen(),
+          child: const ProfileScreen(),
           settings: settings,
           direction: AxisDirection.left);
     case '/thankyou':
       return CustomPageRoute(
-          child: Thankyou(), settings: settings, direction: AxisDirection.left);
+          child: const Thankyou(), settings: settings, direction: AxisDirection.left);
   }
 }

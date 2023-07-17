@@ -19,25 +19,22 @@ class Components {
         ),
         child: IconButton(
           icon: const Icon(Icons.logout),
-          onPressed: () {
-            // AuthenticationRepository.instance.signOut(context);
-            logout(context);
+          onPressed: () async {
+              await logout(context);
           },
         ),
       ),
       actions: [
-        Container(
-          child: InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/profile');
-            },
-            child: Ink.image(
-              image: AssetImage(
-                kMainIconUrl,
-              ),
-              height: 75,
-              width: 75,
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, '/profile');
+          },
+          child: Ink.image(
+            image: const AssetImage(
+              kMainIconUrl,
             ),
+            height: 75,
+            width: 75,
           ),
         ),
       ],

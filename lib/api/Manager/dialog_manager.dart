@@ -57,6 +57,26 @@ class DialogManager {
 
 
   // show snackbar
+  static ScaffoldFeatureController customSnackBar(BuildContext context, String error, Color color) {
+    final snackBar = SnackBar(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(20),
+        ),
+      ),
+      content: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          error.toUpperCase(),
+          style: const TextStyle(color: Colors.white, letterSpacing: 1.5, fontWeight: FontWeight.bold),
+        ),
+      ),
+      backgroundColor: color
+          .withOpacity(0.8)
+          .withAlpha(200),
+    );
 
+    return ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
 
 }
