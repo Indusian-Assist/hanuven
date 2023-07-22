@@ -1,10 +1,11 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:hanuven/Screens/Scanner/components/scan_result.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import '../../../api/Manager/dialog_manager.dart';
+import '../../../api/services/base_client.dart';
 import '../../../utils/Components/animationScreen/animaton.dart';
-import '../../../utils/Components/custom_page_route.dart';
 import 'qr_scanner_overlay.dart';
 
 const Color kScannerBg = Color.fromARGB(255, 255, 254, 254);
@@ -87,6 +88,26 @@ class _QRScannerState extends State<QRScanner> with TickerProviderStateMixin {
     _controller.dispose();
     super.dispose();
   }
+  qrVerify(context, String code) async {
+    var response = await BaseClient().post('https://hanuven.vercel.app',
+        '/api/activation', {"qr": code.toString()}).catchError((err) {
+      debugPrint(err.toString());
+    });
+    var message = json.decode(response);
+    var status = message['verified'].toString();
+    debugPrint(message.toString());
+    if (status == "true") {
+      Navigator.pushReplacementNamed(context, '/success');
+      DialogManager.customSnackBar(
+          context, message['message'].toString(), Colors.green);
+    } else if(status == "false") {
+      Navigator.pushReplacementNamed(context, '/error');
+      DialogManager.customSnackBar(
+          context, message['message'].toString(), Colors.red);
+    }
+    // Navigator.pushReplacementNamed(context, '/success');
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +152,7 @@ class _QRScannerState extends State<QRScanner> with TickerProviderStateMixin {
                   MobileScanner(
                     // fit: BoxFit.contain,
                     controller: cameraController,
-                    onDetect: (capture) {
+                    onDetect: (capture) async {
                       final List<Barcode> barcodes = capture.barcodes;
                       // ignore: unused_local_variable
                       final Uint8List? image = capture.image;
@@ -142,13 +163,7 @@ class _QRScannerState extends State<QRScanner> with TickerProviderStateMixin {
                           debugPrint('Barcode found! ${barcode.rawValue}');
                         }
                         _isScanComplete = true;
-                        Navigator.pushReplacement(
-                          context,
-                          CustomPageRoute(
-                              child: ResultScreen(
-                                  closeScreen: closeScreen, code: code),
-                              direction: AxisDirection.up),
-                        );
+                        await qrVerify(context, code);
                         return;
                       }
                     },

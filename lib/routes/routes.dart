@@ -5,6 +5,7 @@ import 'package:hanuven/Screens/ProfileScreen/Components/edit_profile.dart';
 import 'package:hanuven/Screens/ProfileScreen/profile_screen.dart';
 import 'package:hanuven/Screens/Shopping/thankyou.dart';
 import 'package:hanuven/Screens/loginScreen/login_screen.dart';
+import 'package:hanuven/utils/Components/animations/error.dart';
 import '../Screens/Scanner/components/qr_scan.dart';
 import '../Screens/Scanner/components/scan_result.dart';
 import '../utils/Components/animations/success.dart';
@@ -59,6 +60,11 @@ onGenerateRoute(RouteSettings settings) {
     case '/success':
       return CustomPageRoute(
           child: const SuccessScreen(),
+          settings: settings,
+          direction: AxisDirection.up);
+    case '/error':
+      return CustomPageRoute(
+          child: const ErrorScreen(),
           settings: settings,
           direction: AxisDirection.up);
     case '/editprofile':

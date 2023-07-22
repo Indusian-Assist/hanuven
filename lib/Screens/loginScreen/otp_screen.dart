@@ -133,11 +133,11 @@ class _OTPScreenState extends State<OTPScreen> {
                           const Color.fromARGB(149, 2, 109, 54));
                       Navigator.pushReplacementNamed(context, '/home');
                     } else {
-                      DialogManager.customSnackBar(
-                          context, await checkErrorMessage(response), Colors.red);
-                          setState(() {
+                      setState(() {
                             code = '';
                           });
+                      DialogManager.customSnackBar(
+                          context, await checkErrorMessage(response), Colors.red);
                     }
                   },
                   child: Container(

@@ -16,7 +16,7 @@ class ResultScreen extends StatelessWidget {
     required this.code,
     required this.closeScreen,
   });
-  qrVerify(context) async {
+  qrVerify(context, String code) async {
     var response = await BaseClient().post('https://hanuven.vercel.app',
         '/api/activation', {"qr": code.toString()}).catchError((err) {
       debugPrint(err.toString());
@@ -29,6 +29,7 @@ class ResultScreen extends StatelessWidget {
       DialogManager.customSnackBar(
           context, message['message'].toString(), Colors.green);
     } else if(status == "false") {
+      Navigator.pushReplacementNamed(context, '/error');
       DialogManager.customSnackBar(
           context, message['message'].toString(), Colors.red);
     }
@@ -116,7 +117,7 @@ class ResultScreen extends StatelessWidget {
                   ),
                   onPressed: () async {
                     Clipboard.setData(ClipboardData(text: code));
-                    await qrVerify(context);
+                    await qrVerify(context, code);
 
                     // buildCustomDialog(context);
                   },
