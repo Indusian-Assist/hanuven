@@ -53,7 +53,7 @@ class Body extends StatelessWidget {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/home');
+                          Navigator.pushReplacementNamed(context, '/editprofile');
                         },
                         icon: Image.asset(
                           kMainIconUrl,

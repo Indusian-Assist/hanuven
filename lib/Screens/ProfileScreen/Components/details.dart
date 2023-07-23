@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanuven/utils/constants/color.dart';
-import 'package:hanuven/utils/constants/images_icons.dart';
 import '../../../api/models/user.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:skeletons/skeletons.dart';
@@ -107,9 +106,12 @@ class ProfileDetails extends StatelessWidget {
                       height: 150,
                       width: 150,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          image: const DecorationImage(
-                              image: kProfileImage, fit: BoxFit.cover)),
+                        borderRadius: BorderRadius.circular(100),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${userData.name ?? 'Not Any'}'),
+                            fit: BoxFit.cover),
+                      ),
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 10),
@@ -118,7 +120,7 @@ class ProfileDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            userData.name,
+                            userData.name ?? 'Name NA',
                             style: GoogleFonts.urbanist(
                                 fontSize: 25, fontWeight: FontWeight.bold),
                           ),
@@ -142,7 +144,7 @@ class ProfileDetails extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Text(
-                        userData.role.toUpperCase(),
+                        {userData.role ?? 'Role'}.toString().toUpperCase(),
                         style: GoogleFonts.urbanist(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -157,7 +159,7 @@ class ProfileDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Icon(Icons.pin_drop),
-                          Text(userData.address),
+                          Text(userData.address ?? 'Address'),
                         ],
                       ),
                     ),
@@ -178,7 +180,7 @@ class ProfileDetails extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  'Email : ${userData.email} \nPhone : ${userData.phone} \nDateTime : ${userData.loginInfo.date} \nIP : ${userData.loginInfo.ip} \nDevice : ${userData.loginInfo.device} \nHeader : ${userData.loginInfo.header}',
+                  'Email : ${userData.email ?? "NA"} \nPhone : ${userData.phone} \nDateTime : ${userData.loginInfo?.date ?? "NA"} \nIP : ${userData.loginInfo?.ip ?? "NA" } \nDevice : ${userData.loginInfo?.device ?? "NA"} \nHeader : ${userData.loginInfo?.header ?? "NA"}',
                   style: GoogleFonts.urbanist(
                     fontSize: 12,
                   ),

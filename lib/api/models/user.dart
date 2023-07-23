@@ -11,17 +11,17 @@ UserData userDataFromJson(String str) => UserData.fromJson(json.decode(str));
 String userDataToJson(UserData data) => json.encode(data.toJson());
 
 class UserData {
-    LoginInfo loginInfo;
-    String id;
-    int phone;
-    String role;
-    List<dynamic> cart;
-    DateTime createdAt;
-    DateTime updatedAt;
-    int v;
-    String address;
-    String email;
-    String name;
+    LoginInfo? loginInfo;
+    String? id;
+    int? phone;
+    String? role;
+    List<dynamic>? cart;
+    DateTime? createdAt;
+    DateTime? updatedAt;
+    int? v;
+    String? address;
+    String? email;
+    String? name;
 
     UserData({
         required this.loginInfo,
@@ -52,13 +52,13 @@ class UserData {
     );
 
     Map<String, dynamic> toJson() => {
-        "loginInfo": loginInfo.toJson(),
+        "loginInfo": loginInfo?.toJson(),
         "_id": id,
         "phone": phone,
         "role": role,
-        "cart": List<dynamic>.from(cart.map((x) => x)),
-        "createdAt": createdAt.toIso8601String(),
-        "updatedAt": updatedAt.toIso8601String(),
+        "cart": List<dynamic>.from(cart!.map((x) => x)),
+        "createdAt": createdAt?.toIso8601String(),
+        "updatedAt": updatedAt?.toIso8601String(),
         "__v": v,
         "address": address,
         "email": email,
@@ -67,10 +67,10 @@ class UserData {
 }
 
 class LoginInfo {
-    String ip;
-    String device;
-    String header;
-    DateTime date;
+    String? ip;
+    String? device;
+    String? header;
+    DateTime? date;
 
     LoginInfo({
         required this.ip,
@@ -90,7 +90,7 @@ class LoginInfo {
         "ip": ip,
         "device": device,
         "header": header,
-        "date": date.toIso8601String(),
+        "date": date?.toIso8601String(),
     };
 }
 
