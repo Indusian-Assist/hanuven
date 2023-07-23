@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
+import 'package:ua_client_hints/ua_client_hints.dart';
 
 // Function 1: Text to JSON Cookies Converter return auth token
 Map<String, String> textToJsonCookies(String cookiesText) {
@@ -25,9 +26,11 @@ Map<String, String> textToJsonCookies(String cookiesText) {
 
 // Function 2: CSRF Generator
 Future<String> generateCsrf() async {
-  http.Response csrfResponse = await http.post(
-    Uri.parse('https://hanuven.vercel.app/api/auth/callback/credentials'),
-    body: {'json': 'true'},
+  http.Response csrfResponse = await http.get(
+    Uri.parse('https://hanuven.vercel.app/api/auth/session'),
+    headers: {
+      'User-Agent': await userAgent(),
+    },
   );
   String csrfToken = textToJsonCookies(
           csrfResponse.headers['set-cookie']!)['__Host-next-auth.csrf-token']

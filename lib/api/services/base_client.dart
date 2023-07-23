@@ -4,6 +4,7 @@ import 'dart:io';
 
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
+import 'package:ua_client_hints/ua_client_hints.dart';
 
 import '../../api/services/app_exceptions.dart';
 import '../Manager/session_token_manager.dart';
@@ -16,9 +17,11 @@ class BaseClient {
   Future<dynamic> get(String baseUrl, String api) async {
     var uri = Uri.parse(baseUrl + api);
     try {
-      var cookies = await generateCookieString();
+      var (cookies, _) = await generateCookieString();
       var response = await http.get(uri, headers: {
-        'cookie': cookies.toString()
+        'Content-Type': 'application/json',
+        'cookie': cookies,
+        'User-Agent': await userAgent(),
       }).timeout(const Duration(seconds: TIME_OUT_DURATION));
       // save cookies to local storage (update csrfToken)
       await saveCookiesToLocalStorage(response.headers['set-cookie']!);
@@ -36,13 +39,12 @@ class BaseClient {
     var uri = Uri.parse(baseUrl + api);
     var payload = json.encode(payloadObj);
     try {
-      var cookies = await generateCookieString();
-      var response = await http
-          .post(uri, body: payload, headers: {
-            'Content-Type': 'application/json',
-            'cookie': cookies.toString()
-          })
-          .timeout(const Duration(seconds: TIME_OUT_DURATION));
+      var (cookies, _) = await generateCookieString();
+      var response = await http.post(uri, body: payload, headers: {
+        'Content-Type': 'application/json',
+        'cookie': cookies,
+        'User-Agent': await userAgent(),
+      }).timeout(const Duration(seconds: TIME_OUT_DURATION));
       // save cookies to local storage (update csrfToken)
       await saveCookiesToLocalStorage(response.headers['set-cookie']!);
       return _processResponse(response);
