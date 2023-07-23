@@ -11,6 +11,7 @@ import 'package:hanuven/utils/constants/text_styles.dart';
 import 'package:otp_timer_button/otp_timer_button.dart';
 
 import '../../api/controller/login_logic.dart';
+import 'Componets/custom_otp_field.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key, required this.number});
@@ -26,6 +27,7 @@ class _OTPScreenState extends State<OTPScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
@@ -40,67 +42,43 @@ class _OTPScreenState extends State<OTPScreen> {
                     height: 150,
                     width: 150),
                 Text(
-                  'Enter OTP \nto verify',
+                  'Enter the\nAccess key to verify',
                   style: kDefaultFontLogin,
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: size.height * 0.025,
                 ),
                 Form(
                     child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CustomOTPField(
-                        onChanged: (value) {
-                          if (value.length == 1) {
-                            code = code + value;
-                            FocusScope.of(context).nextFocus();
-                          }
-                        },
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
+                    child: TextFormField(
+                      onChanged: (value) {
+                        if (value.length >= 6) {
+                          code = code + value;
+                          FocusScope.of(context).nextFocus();
+                        }
+                      },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(25),
+                          ),
+                        ),
                       ),
-                      CustomOTPField(
-                        onChanged: (value) {
-                          if (value.length == 1) {
-                            code = code + value;
-                            FocusScope.of(context).nextFocus();
-                          }
-                        },
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 10,
                       ),
-                      CustomOTPField(
-                        onChanged: (value) {
-                          if (value.length == 1) {
-                            code = code + value;
-                            FocusScope.of(context).nextFocus();
-                          }
-                        },
-                      ),
-                      CustomOTPField(
-                        onChanged: (value) {
-                          if (value.length == 1) {
-                            code = code + value;
-                            FocusScope.of(context).nextFocus();
-                          }
-                        },
-                      ),
-                      CustomOTPField(
-                        onChanged: (value) {
-                          if (value.length == 1) {
-                            code = code + value;
-                            FocusScope.of(context).nextFocus();
-                          }
-                        },
-                      ),
-                      CustomOTPField(
-                        onChanged: (value) {
-                          if (value.length == 1) {
-                            code = code + value;
-                            // AuthenticationRepository.instance.verifyOTP(context, code);
-                          }
-                        },
-                      ),
-                    ],
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(6),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                    ),
                   ),
                 )),
               ],
@@ -113,8 +91,8 @@ class _OTPScreenState extends State<OTPScreen> {
                   height: 60,
                   onPressed: () {},
                   text: const Text(
-                    'Resend OTP',
-                    style: TextStyle(fontSize: 20),
+                    'Still not received?\nTalk to Admin!',
+                    style: TextStyle(fontSize: 15, color: kDarkColor),
                   ),
                   buttonType: ButtonType.text_button,
                   backgroundColor: kButtonColor,
@@ -132,12 +110,15 @@ class _OTPScreenState extends State<OTPScreen> {
                           "Successfully Logged In",
                           const Color.fromARGB(149, 2, 109, 54));
                       Navigator.pushReplacementNamed(context, '/home');
+                    }else if(code == ''){
+                      DialogManager.customSnackBar(context,
+                          "Please clear field \n------- & -------- \nre-enter the Access Key Provided by the Admin", Colors.red);
                     } else {
+                      DialogManager.customSnackBar(context,
+                          await checkErrorMessage(response), Colors.red);
                       setState(() {
-                            code = '';
-                          });
-                      DialogManager.customSnackBar(
-                          context, await checkErrorMessage(response), Colors.red);
+                        code = '';
+                      });
                     }
                   },
                   child: Container(
@@ -162,32 +143,61 @@ class _OTPScreenState extends State<OTPScreen> {
       ),
     );
   }
-}
 
-class CustomOTPField extends StatelessWidget {
-  const CustomOTPField({
-    super.key,
-    required this.onChanged,
-  });
-  final Function(String)? onChanged;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 68,
-      width: 64,
-      child: TextFormField(
-        onChanged: onChanged,
-
-        decoration:
-            const InputDecoration(hintText: "0", border: OutlineInputBorder()),
-        //style: Theme.of(context).textTheme.headline6,
-        keyboardType: TextInputType.number,
-        textAlign: TextAlign.center,
-        inputFormatters: [
-          LengthLimitingTextInputFormatter(1),
-          FilteringTextInputFormatter.digitsOnly,
-        ],
-      ),
+  Row customBoxFields(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        CustomOTPField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              code = code + value;
+              FocusScope.of(context).nextFocus();
+            } else {
+              FocusScope.of(context).previousFocus();
+            }
+          },
+        ),
+        CustomOTPField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              code = code + value;
+              FocusScope.of(context).nextFocus();
+            }
+          },
+        ),
+        CustomOTPField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              code = code + value;
+              FocusScope.of(context).nextFocus();
+            }
+          },
+        ),
+        CustomOTPField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              code = code + value;
+              FocusScope.of(context).nextFocus();
+            }
+          },
+        ),
+        CustomOTPField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              code = code + value;
+              FocusScope.of(context).nextFocus();
+            }
+          },
+        ),
+        CustomOTPField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              code = code + value;
+            }
+          },
+        ),
+      ],
     );
   }
 }

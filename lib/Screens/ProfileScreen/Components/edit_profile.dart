@@ -23,11 +23,12 @@ class _EditProfileState extends State<EditProfile> {
             ClipPath(
               clipper: CustomClipPath(),
               child: Container(
-                height: size.height / 4,
+                height: size.height / 3,
                 width: double.maxFinite,
                 decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: kProfileBgImage, fit: BoxFit.cover)),
+                  image: DecorationImage(
+                      image: kProfileBgImage, fit: BoxFit.cover),
+                ),
               ),
             ),
             SafeArea(
@@ -92,7 +93,9 @@ class _EditProfileState extends State<EditProfile> {
                                     opacity: 0.8),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: const Color.fromARGB(255, 225, 225, 225).withOpacity(0.5),
+                                    color:
+                                        const Color.fromARGB(255, 225, 225, 225)
+                                            .withOpacity(0.5),
                                     spreadRadius: 5,
                                     blurRadius: 2,
                                     offset: const Offset(

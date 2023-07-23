@@ -63,5 +63,5 @@ const String kProfileImageUrl = 'assets/images/profilepicture.jpg';
 const AssetImage kProfileImage = AssetImage(kProfileImageUrl);
 
 // This is the image forprofile screen background
-const String kProfilebgImageUrl = 'assets/images/profilebackground.jpg';
+const String kProfilebgImageUrl = 'assets/images/profilebackground.png';
 const AssetImage kProfileBgImage = AssetImage(kProfilebgImageUrl);

@@ -5,7 +5,6 @@ import '../../../api/models/products.dart';
 import '../../../utils/constants/color.dart';
 import '../../Product/product.dart';
 import 'components.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class ProductsSection extends StatefulWidget {
   const ProductsSection({
@@ -20,10 +19,6 @@ class ProductsSection extends StatefulWidget {
 }
 
 class _ProductsSectionState extends State<ProductsSection> {
-  final spinkit = const SpinKitFadingCircle(
-    color: kButtonColor,
-    size: 50.0,
-  );
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -84,7 +79,7 @@ class _ProductsSectionState extends State<ProductsSection> {
                         // kProduct1Url,
                         products.data[0].photo,
                         products.data[0].name,
-                        'INR ${products.data[0].price}'),
+                        'INR ${products.data[0].price}', size),
                     openBuilder: (context, _) => ProductScreen(
                       pimage: products.data[0].photo,
                       title: products.data[0].name,
@@ -108,7 +103,7 @@ class _ProductsSectionState extends State<ProductsSection> {
                     closedBuilder: (context, _) => Components.customProductCard(
                         products.data[1].photo,
                         products.data[1].name,
-                        'INR ${products.data[1].price}'),
+                        'INR ${products.data[1].price}', size),
                     openBuilder: (context, _) => ProductScreen(
                       pimage: products.data[1].photo,
                       title: products.data[1].name,

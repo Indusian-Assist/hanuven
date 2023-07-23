@@ -15,6 +15,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     ContainerTransitionType _containerTransitionType =
         ContainerTransitionType.fade;
+    Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Center(
@@ -31,10 +32,11 @@ class Body extends StatelessWidget {
             ),
             //scanner button
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 75, vertical: 10),
+              padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.15, vertical: 10),
               child: Container(
-                height: 60,
-                width: 280,
+                height: size.height * 0.068,
+                width: size.width * 0.8,
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
                   border: Border.all(width: 1),
@@ -60,22 +62,24 @@ class Body extends StatelessWidget {
                     label: Text(
                       'SCAN PRODUCTS',
                       style: GoogleFonts.urbanist(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                          fontSize: size.width * 0.05,
+                          fontWeight: FontWeight.bold),
                     )),
               ),
             ),
-            const SizedBox(
-              height: 200,
+            SizedBox(
+              height: size.height * 0.21,
               width: double.infinity,
               child: Image(
                 image: kHomeScreenRingsImage,
                 fit: BoxFit.cover,
-                height: 150,
+                height: size.height * 0.21,
               ),
             ),
             // Header Text
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+              padding: EdgeInsets.symmetric(
+                  vertical: size.height * 0.005, horizontal: size.width * 0.05),
               child: Text(
                 'Our Products',
                 style: GoogleFonts.urbanist(

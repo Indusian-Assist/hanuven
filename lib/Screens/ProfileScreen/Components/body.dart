@@ -17,61 +17,63 @@ class Body extends StatelessWidget {
           ClipPath(
             clipper: CustomClipPath(),
             child: Container(
-              height: size.height / 4,
+              height: size.height / 3,
               width: double.maxFinite,
               decoration: const BoxDecoration(
                   image:
-                      DecorationImage(image: kProfileBgImage, fit: BoxFit.cover)),
+                      DecorationImage(image: AssetImage('assets/images/profilebackground.png'), fit: BoxFit.cover)),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_back_ios_new),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ),
-                    //error
-                    Container(
-                      decoration: BoxDecoration(
-                        color: kBackgroundColor,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/editprofile');
-                        },
-                        icon: Image.asset(
-                          kMainIconUrl,
-                          height: 50,
-                          width: 50,
+          SafeArea(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: IconButton(
+                          icon: const Icon(Icons.arrow_back_ios_new),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 90,
-                ),
-
-                // Profile Details
-                const ProfileDetails(),
-
-              ],
+                      //error
+                      Container(
+                        decoration: BoxDecoration(
+                          color: kBackgroundColor,
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, '/editprofile');
+                          },
+                          icon: Image.asset(
+                            kMainIconUrl,
+                            height: 50,
+                            width: 50,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 90,
+                  ),
+          
+                  // Profile Details
+                  const ProfileDetails(),
+          
+                ],
+              ),
             ),
           ),
         ],

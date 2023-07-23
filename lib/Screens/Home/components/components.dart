@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanuven/api/controller/login_logic.dart';
-// import 'package:hanuven/utils/Auth/authentication_repository.dart';
-
 import '../../../utils/constants/color.dart';
 import '../../../utils/constants/images_icons.dart';
 
@@ -43,23 +41,23 @@ class Components {
 
   static PreferredSize customPreferredSize(context) {
     return PreferredSize(
-      preferredSize: Size.fromHeight(75.0),
+      preferredSize: const Size.fromHeight(75.0),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Components.customAppBar(context),
       ),
     );
   }
 
   static Container customProductCard(
-      String imageUrl, String headertxt, String price) {
+      String imageUrl, String headertxt, String price, Size size) {
     return Container(
-      height: 280,
-      width: 180,
+      // height: size.height * 0.31,
+      width: size.width * 0.42,
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           border: Border.all(width: 0),
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(20),
           color: kDarkColor,
           boxShadow: const [
             BoxShadow(
@@ -69,20 +67,19 @@ class Components {
             ),
           ]),
       child: Padding(
-        padding: EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 5.0),
-              child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
+              child: SizedBox(
                 height: 160,
                 width: 160,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(20),
                   child: Image(
-                    // image: AssetImage(imageUrl),
                     image: NetworkImage(imageUrl),
                     fit: BoxFit.cover,
                   ),
@@ -90,10 +87,10 @@ class Components {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 5.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
               child: Text(
                 headertxt,
-                style: TextStyle(
+                style: const TextStyle(
                   color: kLightColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
@@ -101,7 +98,7 @@ class Components {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 5.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,13 +121,11 @@ class Components {
               children: [
                 Container(
                   height: 30,
-                  //margin: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     color: kBackgroundColor,
                     borderRadius: BorderRadius.circular(25),
                   ),
                   child: TextButton(
-                    child: Text('BUY NOW'),
                     style: TextButton.styleFrom(
                         foregroundColor: kTextColor,
                         textStyle: GoogleFonts.urbanist(
@@ -138,6 +133,7 @@ class Components {
                     onPressed: () {
                       //Todo: Srijan add an action
                     },
+                    child: const Text('BUY NOW'),
                   ),
                 ),
                 Container(
