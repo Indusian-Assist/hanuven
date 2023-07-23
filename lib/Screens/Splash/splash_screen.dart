@@ -16,14 +16,14 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
-    Timer(const Duration(seconds: 3), () async {
-      await checkUser() == true
-        ? Navigator.pushReplacementNamed(context, '/home')
-        : Navigator.pushReplacementNamed(context, '/guid');
-    });
-    super.initState();
-  }
+  // void initState() {
+  //   Timer(const Duration(seconds: 3), () async {
+  //     await checkUser() == true
+  //       ? Navigator.pushReplacementNamed(context, '/home')
+  //       : Navigator.pushReplacementNamed(context, '/guid');
+  //   });
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {

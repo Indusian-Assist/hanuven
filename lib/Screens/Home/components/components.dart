@@ -20,7 +20,7 @@ class Components {
         child: IconButton(
           icon: const Icon(Icons.logout),
           onPressed: () async {
-              await logout(context);
+            await logout(context);
           },
         ),
       ),

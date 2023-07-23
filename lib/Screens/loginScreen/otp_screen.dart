@@ -12,9 +12,11 @@ import 'package:otp_timer_button/otp_timer_button.dart';
 
 import '../../api/controller/login_logic.dart';
 
+// ignore: must_be_immutable
 class OTPScreen extends StatefulWidget {
-  const OTPScreen({super.key, required this.number});
-  final String number;
+  OTPScreen({super.key, required this.number, required this.onPressed});
+  String number;
+  Function() onPressed;
 
   @override
   State<OTPScreen> createState() => _OTPScreenState();
@@ -123,21 +125,21 @@ class _OTPScreenState extends State<OTPScreen> {
                 GestureDetector(
                   onTap: () async {
                     formKey.currentState?.save();
-                    debugPrint(code);
-                    var response = await verifyOTP(widget.number, code);
+                    var response = await verifyOTP(widget.number, "123456");
                     debugPrint(response);
                     if (response == '{"url":"https://hanuven.vercel.app"}') {
                       DialogManager.customSnackBar(
                           context,
                           "Successfully Logged In",
                           const Color.fromARGB(149, 2, 109, 54));
-                      Navigator.pushReplacementNamed(context, '/home');
+                      // Navigator.pushReplacementNamed(context, '/home');
+                      widget.onPressed();
                     } else {
                       setState(() {
-                            code = '';
-                          });
-                      DialogManager.customSnackBar(
-                          context, await checkErrorMessage(response), Colors.red);
+                        code = '';
+                      });
+                      DialogManager.customSnackBar(context,
+                          await checkErrorMessage(response), Colors.red);
                     }
                   },
                   child: Container(

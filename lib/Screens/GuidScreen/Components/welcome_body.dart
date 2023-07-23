@@ -4,7 +4,8 @@ import 'package:hanuven/Screens/GuidScreen/Components/guid_button.dart';
 import 'package:hanuven/utils/constants/color.dart';
 
 class WelcomeBody extends StatefulWidget {
-  const WelcomeBody({Key? key}) : super(key: key);
+  WelcomeBody({Key? key, required this.onPressed}) : super(key: key);
+  Function() onPressed;
 
   @override
   State<WelcomeBody> createState() => _BodyState();
@@ -13,9 +14,7 @@ class WelcomeBody extends StatefulWidget {
 class _BodyState extends State<WelcomeBody> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Expanded(flex: 1, child: Carousel()),
       Stack(
         children: <Widget>[
@@ -39,7 +38,8 @@ class _BodyState extends State<WelcomeBody> {
             child: Align(
               alignment: Alignment.center,
               child: GuidButton(
-                  onPressed: () => Navigator.pushNamed(context, '/login')),
+                onPressed: widget.onPressed,
+              ),
             ),
           )
         ],

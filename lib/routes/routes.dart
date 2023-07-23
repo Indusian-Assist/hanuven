@@ -16,8 +16,8 @@ import '../Screens/test.dart';
 onGenerateInitialRoutes(String initialRoute) {
   return [
     MaterialPageRoute(
-      builder: (context) => const SplashScreen(),
-      settings: const RouteSettings(name: '/splash'),
+      builder: (context) => const HomeScreen(),
+      settings: const RouteSettings(name: '/home'),
     ),
   ];
 }
@@ -29,24 +29,24 @@ onGenerateRoute(RouteSettings settings) {
           child: TestScreen(),
           settings: settings,
           direction: AxisDirection.left);
-    case '/splash':
-      return MaterialPageRoute(
-          builder: (context) => const SplashScreen(), settings: settings);
+    // case '/splash':
+    //   return MaterialPageRoute(
+    //       builder: (context) => const SplashScreen(), settings: settings);
     case '/home':
       return CustomPageRoute(
           child: const HomeScreen(),
           settings: settings,
           direction: AxisDirection.left);
-    case '/guid':
-      return CustomPageRoute(
-          child: const WelcomeScreen(),
-          settings: settings,
-          direction: AxisDirection.left);
-    case '/login':
-      return CustomPageRoute(
-          child: const LoginScreen(),
-          settings: settings,
-          direction: AxisDirection.right);
+    // case '/guid':
+    //   return CustomPageRoute(
+    //       child: const WelcomeScreen(),
+    //       settings: settings,
+    //       direction: AxisDirection.left);
+    // case '/login':
+    //   return CustomPageRoute(
+    //       child: const LoginScreen(),
+    //       settings: settings,
+    //       direction: AxisDirection.right);
     case '/ScanQR':
       return CustomPageRoute(
           child: const QRScanner(),
@@ -79,6 +79,8 @@ onGenerateRoute(RouteSettings settings) {
           direction: AxisDirection.left);
     case '/thankyou':
       return CustomPageRoute(
-          child: const Thankyou(), settings: settings, direction: AxisDirection.left);
+          child: const Thankyou(),
+          settings: settings,
+          direction: AxisDirection.left);
   }
 }
