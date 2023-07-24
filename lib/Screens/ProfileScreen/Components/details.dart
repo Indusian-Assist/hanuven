@@ -124,13 +124,13 @@ class ProfileDetails extends StatelessWidget {
                             style: GoogleFonts.urbanist(
                                 fontSize: 25, fontWeight: FontWeight.bold),
                           ),
-                          IconButton(
-                            padding: const EdgeInsets.all(0.0),
-                            icon: const Icon(Icons.edit_document),
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/editprofile');
-                            },
-                          ),
+                          // IconButton(
+                          //   padding: const EdgeInsets.all(0.0),
+                          //   icon: const Icon(Icons.edit_document),
+                          //   onPressed: () {
+                          //     Navigator.pushNamed(context, '/home');
+                          //   },
+                          // ),
                         ],
                       ),
                     ),
